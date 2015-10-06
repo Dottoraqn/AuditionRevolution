@@ -38,7 +38,8 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 6</div>
+                <div class="title">Laravel 5</div>
+                <a href="/projects">Projects</a>
             </div>
         </div>
     </body>

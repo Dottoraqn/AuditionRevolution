@@ -1,10 +1,14 @@
 <?php
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-$host = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$database = substr($url["path"], 1);
-
+//$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+//mysql://b713d29ae5b777:4d615730@us-cdbr-iron-east-03.cleardb.net/heroku_31c448a2f206010?reconnect=true
+// $host = $url["host"];
+// $username = $url["user"];
+// $password = $url["pass"];
+// $database = substr($url["path"], 1);
+$host = 'us-cdbr-iron-east-03.cleardb.net';
+$username = 'b713d29ae5b777';
+$password = '4d615730';
+$database = 'heroku_31c448a2f206010';
 return [
 
     /*

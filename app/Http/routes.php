@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('projects', function () {
+    return view('projects');
+});
+Route::get('blade', function () {
+    return view('master');
+});
+Route::get('home', function () {
+    return view('home');
+});
+Route::get('navbar', function () {
+    return view('navbar');
+});
