@@ -1,5 +1,11 @@
 <?php
 
+$url = parse_url("mysql://b713d29ae5b777:4d615730@us-cdbr-iron-east-03.cleardb.net/heroku_31c448a2f206010?reconnect=true");
+$host = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$database = substr($url["path"], 1);
+
 return [
 
     /*
@@ -44,7 +50,7 @@ return [
     |
     */
 
-		$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+		$url = parse_url("mysql://b713d29ae5b777:4d615730@us-cdbr-iron-east-03.cleardb.net/heroku_31c448a2f206010?reconnect=true");
 
 		$host = $url["host"];
 		$username = $url["user"];
