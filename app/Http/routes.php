@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-		return User::all();
+		// return User::all();
     return view('welcome');
 });
 Route::get('projects', function () {
