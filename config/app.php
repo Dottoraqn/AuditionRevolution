@@ -78,11 +78,8 @@ return [
     |
     */
 
-<<<<<<< HEAD
     'key' => env('APP_KEY', 'sOsa0fadUY4ecxFVA8EidlNBDW76YcfN'),
-=======
     'key' => env('APP_KEY', 'A2c4h9rXbColfx9R2CLN7bqrffFhBK07'),
->>>>>>> 690750fa740ae24863a39e29ffbc2ae86764f2fa
 
     'cipher' => 'AES-256-CBC',
 

@@ -35,12 +35,9 @@ return [
     |
     */
 
-<<<<<<< HEAD
     'default' => env('DB_CONNECTION', 'mysql'),
-=======
     // 'default' => env('DB_CONNECTION', 'mysql'),
     'default' => 'mysql',
->>>>>>> 690750fa740ae24863a39e29ffbc2ae86764f2fa
 
     /*
     |--------------------------------------------------------------------------
@@ -58,15 +55,6 @@ return [
     |
     */
 
-<<<<<<< HEAD
-		$url = parse_url("mysql://b713d29ae5b777:4d615730@us-cdbr-iron-east-03.cleardb.net/heroku_31c448a2f206010?reconnect=true");
-
-		$host = $url["host"];
-		$username = $url["user"];
-		$password = $url["pass"];
-		$database = substr($url["path"], 1);
-=======
->>>>>>> 690750fa740ae24863a39e29ffbc2ae86764f2fa
     'connections' => [
 
         'sqlite' => [
@@ -76,26 +64,15 @@ return [
         ],
 
         'mysql' => [
-<<<<<<< HEAD
             'driver'    => 'mysql',
             'host'      => $host,
             'database'  => $database,
             'username'  => $username,
-            'password'  => $password
+            'password'  => $password,
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
             'strict'    => false,
-=======
-            'driver' => 'mysql',
-             'host' => $host,
-             'database' => $database,
-             'username' => $username,
-             'password' => $password,
-             'charset' => 'utf8',
-             'collation' => 'utf8_unicode_ci',
-             'prefix' => '',
->>>>>>> 690750fa740ae24863a39e29ffbc2ae86764f2fa
         ],
 
         'pgsql' => [
