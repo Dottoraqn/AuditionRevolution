@@ -27,3 +27,12 @@ Route::get('home', function () {
 Route::get('navbar', function () {
     return view('navbar');
 });
+Route::get('profiles', function () {
+    return view('profiles');
+});
+Route::get('search', function () {
+    return view('search');
+});
+Route::get('about', function () {
+    return view('about');
+});
