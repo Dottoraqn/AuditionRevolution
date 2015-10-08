@@ -14,10 +14,16 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="about">About</a></li>
-        <li><a href="search">Search</a></li>
-        <li><a href="#">Sign Up</a></li>
-        <li><a href="search">Sign In</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/search">Search</a></li>
+        <?php if (Auth::check()) {
+          ?>
+        <li><a href="/auth/logout">Logout</a></li>
+        <?php } 
+        else { ?>
+          <li><a href="/auth/register">Sign Up</a></li>
+          <li><a href="/auth/login">Sign In</a></li>
+        <?php } ?>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
