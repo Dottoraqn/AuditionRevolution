@@ -1,0 +1,21 @@
+.navbar-default {
+    min-height: 200px;
+}
+
+.navbar-brand {
+}
+
+.navbar-default .navbar-nav {
+    position: absolute;
+    bottom: 0;
+    right: 20;
+}
+
+.navbar-default .navbar-nav > li {
+  display: block;
+  padding-left: 25px;
+}
+
+.navbar-collapse {
+  border-top: transparent;
+}

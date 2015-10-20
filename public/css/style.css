@@ -1,3 +1,35 @@
+.navbar-default {
+  background-color: white;
+  min-height: 200px;
+  border-bottom: 1px solid #99825c;
+}
+
+.navbar-brand {
+  position: absolute;
+  bottom: 0;
+  height: 100;
+}
+
+.navbar-default .navbar-nav {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: block;
+}
+
+.navbar-default .navbar-nav > li {
+  padding-left: 50;
+  padding-right: 50;
+  padding-top: 40;
+  border-left: 1px solid #99825c;
+  border-right: 1px solid #99825c;
+  border-top: 1px solid #99825c;
+}
+
+.navbar-collapse {
+  border-top: transparent;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
