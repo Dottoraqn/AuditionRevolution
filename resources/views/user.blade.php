@@ -1,12 +1,10 @@
 @extends('master')
 
+<?php if ($route->input('id') == 1)
+{
+  echo "Yes";
+} ?>
 @section('title', 'Page Title')
-
-@section('sidebar')
-    @parent
-
-    <p>This is appended to the master sidebar.</p>
-@endsection
 
 @section('content')
   <h1>User Profiles</h1>

@@ -36,6 +36,11 @@ Route::get('search', function () {
 Route::get('about', function () {
     return view('about');
 });
+
+Route::get('projects/dashboard', function() {
+    return view('projects/dashboard');
+});
+
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
@@ -50,3 +55,7 @@ Route::get('profile', ['middleware' => 'auth', function() {
       return view('profiles');
   });
 }]);
+
+// Route::get('user/profile', [
+//     'as' => 'profile', 'uses' => 'UserController@showProfile'
+// ]);
