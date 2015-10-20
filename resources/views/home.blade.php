@@ -9,5 +9,5 @@
 @endsection
 
 @section('content')
-    <p>This is my body content.</p>
+    <p>Audition Revolution is a small start up based in Atlanta, Georgia.</p>
 @endsection
