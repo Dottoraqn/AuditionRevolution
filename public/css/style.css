@@ -10,3 +10,16 @@
 .container .text-muted {
   margin: 20px 0;
 }
+
+.search-input {
+  padding:5px;
+}
+
+.project-search>.project-search-heading {
+  background-color:transparent;
+  border:none;
+}
+
+.project-search-heading h3 {
+  font-size: 36px;
+}
