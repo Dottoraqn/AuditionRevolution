@@ -15,9 +15,7 @@
 
     <!-- Page Content -->
     <div class="container">
-
         <hr>
-
         <div class="row">
             <div class="col-sm-8">
                 <h2>Open Roles</h2>
