@@ -129,6 +129,7 @@
                     <p><strong>Union:</strong> None</p>
                     <p><strong>Payment:</strong> Contract</p>
                     <button type="button" class="btn btn-primary pull-right">Quick Apply</button>
+                    <a href="/projects/dashboard" type="button" class="btn btn-primary pull-right">More Information</a>
                   </div>
                 </div>
               </div>
