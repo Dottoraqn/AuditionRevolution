@@ -42,3 +42,46 @@
 .container .text-muted {
   margin: 20px 0;
 }
+
+.search-input {
+  padding:5px;
+}
+
+.project-search>.project-search-heading {
+  background-color:transparent;
+  border:none;
+}
+
+.project-search-heading h3 {
+  font-size: 36px;
+}
+
+/*PROJECT PAGE*/
+.business-header {
+  margin-top:-20px;
+  height: 400px;
+  background: url('http://placehold.it/1920x400') center center no-repeat scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.business-header .container {
+  position: relative;
+  top:75%;
+  left:0;
+  right:0;
+}
+
+/* Customize the text color and shadow color and to optimize text legibility. */
+
+.tagline {
+  font-size:72px;
+  /*text-shadow: 0 0 10px #000;*/
+  color: #fff;
+}
+
+.img-center {
+    margin: 0 auto;
+}
