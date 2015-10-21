@@ -1,8 +1,3 @@
-<?php 
-  $loggedIn = true;
-?>
- 
-
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -18,19 +13,14 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <p class="navbar-text navbar-right"><a href="/auth/logout" class="navbar-link">Logout</a></p>
       <ul class="nav navbar-nav navbar-right">
-
-        <?php /*if (Auth::check()) {*/
-          if ($loggedIn==true) { ?>
-            <li><a href="/about"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
-            <li><a href="/search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
-            <li><a href="/profiles"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
-            <li><a href="/landing"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/search">Search</a></li>
+        <?php if (Auth::check()) {
+          ?>
+        <li><a href="/auth/logout">Logout</a></li>
         <?php } 
         else { ?>
-          <li><a href="/about">About</a></li>
-          <li><a href="/search">Search</a></li>
           <li><a href="/auth/register">Sign Up</a></li>
           <li><a href="/auth/login">Sign In</a></li>
         <?php } ?>
