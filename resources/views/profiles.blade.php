@@ -20,4 +20,8 @@
 </div>
 <img src="https://d38zhw9ti31loc.cloudfront.net/wp-content/uploads/2013/07/Crystal-headshot-new.jpg" alt="headshot">
 
+<div>
+<img src="../assets/imgs/eye-templage.png" alt="">
+</div>
+
 @endsection
