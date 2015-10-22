@@ -18,7 +18,7 @@
 
     <div class="attributes">
         <div class="attributeContent" id="eyeColor">
-            <img class="descriptor" src="../img/eye-template.png" alt="eye">
+            <img class="descriptor" src="img/eye-template.png" alt="eye">
         </div>
         <!-- vocal range: two selectors, high->low -->
 
@@ -37,7 +37,7 @@
         <div class="attributeContent" id="weight"><p>130</p></div>
 
         <div class="attributeContent" id="skinTone">
-            <img class="descriptor" src="../img/skintone.png" alt="skin">
+            <img class="descriptor" src="img/skintone.png" alt="skin">
         </div>
     </div>
 </div>
