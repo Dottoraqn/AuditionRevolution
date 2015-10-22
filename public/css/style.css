@@ -1,3 +1,39 @@
+* {
+  font-family: sans-serif "Helvetica";
+}
+
+.navbar-default {
+  background-color: white;
+  min-height: 200px;
+  border-bottom: 1px solid #99825c;
+}
+
+.navbar-brand {
+  position: absolute;
+  bottom: 0;
+  height: 100;
+}
+
+.navbar-default .navbar-nav {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: block;
+}
+
+.navbar-default .navbar-nav > li {
+  padding-left: 50;
+  padding-right: 50;
+  padding-top: 40;
+  border-left: 1px solid #99825c;
+  border-right: 1px solid #99825c;
+  border-top: 1px solid #99825c;
+}
+
+.navbar-collapse {
+  border-top: transparent;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -9,4 +45,187 @@
 
 .container .text-muted {
   margin: 20px 0;
+}
+
+/*PROFILE PAGE*/
+.headshot {
+  position: relative;
+  float: left;
+  width: 30%;
+  border: 2px solid #040404; 
+  border-radius: 30px;
+  margin: 2%;
+}
+
+.personalInfo {
+  position: relative;
+  float: left;
+  width: 60%;
+  margin-top: 2%;
+  font-size: 2em;
+}
+
+#name {
+  position: relative;
+  font-size: 2em;
+}
+
+.personalInfo > div {
+  margin-bottom: 1%;
+}
+
+.attributeContent {
+  float: left;
+  border-color: #040404;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 35px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  margin: .5%;
+}
+
+.attributeContent:nth-child(1) {
+  margin-left: 0;
+}
+
+#eyeColor img {
+  background-color: deepskyblue;
+  border-radius: 100%;
+}
+
+#skinTone img {
+  background-color: bisque;
+  border-radius: 100%;
+}
+
+.profileSectionHeader {
+  position: relative;
+  clear: both;
+  font-size: 2em;
+}
+
+.workInfo {
+  position: relative;
+  clear: both;
+  margin-top: 2%;
+  margin-left: 2%;
+  font-size: 1.5em;
+}
+
+.experienceWraper {
+  position: relative;
+  margin-top: 1%;
+}
+
+.playName {
+  position: relative;
+  clear: both;
+  float: left;
+  margin-left: 2%;
+}
+
+.characterName {
+  position: relative;
+  clear: both;
+  float: right;
+  margin-right: 4%;
+}
+
+.skills {
+  position: relative;
+  clear: both;
+  margin-left: 2%;
+  margin-top: 1%;
+}
+
+/*SEARCH*/
+.search-input {
+  padding:5px;
+}
+
+.project-search>.project-search-heading {
+  background-color:transparent;
+  border:none;
+}
+
+.project-search-heading h3 {
+  font-size: 36px;
+}
+
+/*PROJECT PAGE*/
+.business-header {
+  margin-top:-20px;
+  height: 400px;
+  background: url('http://placehold.it/1920x400') center center no-repeat scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.business-header .container {
+  position: relative;
+  top:75%;
+  left:0;
+  right:0;
+}
+
+/* Customize the text color and shadow color and to optimize text legibility. */
+
+.tagline {
+  font-size:72px;
+  /*text-shadow: 0 0 10px #000;*/
+  color: #fff;
+}
+
+.img-center {
+    margin: 0 auto;
+}
+
+/*MESSAGES PAGE*/
+.messageSelect {
+  position: relative;
+  float: left;
+  width: 20%;
+  height: 100%;
+  border-right: 1px solid #99825c;
+}
+
+.messageSelect li {
+  list-style-type: none;
+  margin-right: 10%;
+}
+
+.message {
+  position: relative;
+/*  border-bottom: 2px solid #040404;*/
+/*  padding: .2%;*/
+  text-align: center;
+  width: 100%;
+}
+
+.messageContent {
+  position: relative;
+  float: left;
+  width: 60%;
+  display: block;
+  margin-left: 3%;
+/*  margin-right: auto;*/
+/*  text-align: center;*/
+  
+}
+
+.subject {
+  position: relative;
+  padding: .5%;
+  font-weight: bold;
+}
+/*if(unread==true)bold;*/
+/*if subject longer than 50 chars 50+"..."*/
+
+.content {
+  position: relative;
+  padding: .5%;
 }
