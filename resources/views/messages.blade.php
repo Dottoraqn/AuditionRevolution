@@ -30,11 +30,11 @@
         </div>
         <div class="content">
             Dear Actor,
-            
+            <br>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ad enim itaque saepe nesciunt a odit alias esse quia possimus eaque, quos quas expedita assumenda cum laudantium ea, amet maxime. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde quo dicta facilis cupiditate id cumque placeat doloremque? Rem illo quia labore cum numquam ratione, ipsum consectetur, architecto maiores iusto vitae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur commodi, laborum fugiat, eius modi est doloremque magni corrupti, ipsam asperiores, quam quaerat veritatis. Laudantium, laboriosam, nulla ut autem impedit deserunt?
-            
+            <br>
             Have a nice day,
-            
+            <br>
             Director
         </div>
     </div>
