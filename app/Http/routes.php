@@ -37,7 +37,7 @@ Route::get('about', function () {
     return view('about');
 });
 Route::get('landing', function () {
-    return view('landing');
+    return view('messages');
 });
 
 Route::get('projects/dashboard', function() {
