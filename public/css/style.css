@@ -1,3 +1,7 @@
+* {
+  font-family: sans-serif "Helvetica";
+}
+
 .navbar-default {
   background-color: white;
   min-height: 200px;
@@ -45,7 +49,95 @@
 
 /*PROFILE PAGE*/
 .headshot {
+  position: relative;
+  float: left;
   width: 30%;
+  border: 2px solid #040404; 
+  border-radius: 30px;
+  margin: 2%;
+}
+
+.personalInfo {
+  position: relative;
+  float: left;
+  width: 60%;
+  margin-top: 2%;
+  font-size: 2em;
+}
+
+#name {
+  position: relative;
+  font-size: 2em;
+}
+
+.personalInfo > div {
+  margin-bottom: 1%;
+}
+
+.attributeContent {
+  float: left;
+  border-color: #040404;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 35px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  margin: .5%;
+}
+
+.attributeContent:nth-child(1) {
+  margin-left: 0;
+}
+
+#eyeColor img {
+  background-color: deepskyblue;
+  border-radius: 100%;
+}
+
+#skinTone img {
+  background-color: bisque;
+  border-radius: 100%;
+}
+
+.profileSectionHeader {
+  position: relative;
+  clear: both;
+  font-size: 2em;
+}
+
+.workInfo {
+  position: relative;
+  clear: both;
+  margin-top: 2%;
+  margin-left: 2%;
+  font-size: 1.5em;
+}
+
+.experienceWraper {
+  position: relative;
+  margin-top: 1%;
+}
+
+.playName {
+  position: relative;
+  clear: both;
+  float: left;
+  margin-left: 2%;
+}
+
+.characterName {
+  position: relative;
+  clear: both;
+  float: right;
+  margin-right: 4%;
+}
+
+.skills {
+  position: relative;
+  clear: both;
+  margin-left: 2%;
+  margin-top: 1%;
 }
 
 /*SEARCH*/
