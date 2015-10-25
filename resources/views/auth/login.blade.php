@@ -4,6 +4,7 @@
 
 
 @section('content')
+
 <form method="POST" action="/auth/login" class="form-horizontal">
     {!! csrf_field() !!}
   <div class="form-group">

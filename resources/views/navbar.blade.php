@@ -1,7 +1,3 @@
-<?php 
-  $loggedIn = true;
-?>
- 
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -20,8 +16,6 @@
       <p class="navbar-text navbar-right"><a href="/auth/logout" class="navbar-link">Logout</a></p>
       <ul class="nav navbar-nav navbar-right">
 
-        <?php /*if (Auth::check()) {*/
-          if ($loggedIn==true) { ?>
             <li class="{{ Helpers::setActive('/') }}">
               <a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
             </li>
@@ -31,16 +25,10 @@
             <li class="{{ Helpers::setActive('profiles') }}">
               <a href="/profiles"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
             </li>
-            <li class="{{ Helpers::setActive('about') }}">
-              <a href="/about"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></a>
+            <li class="{{ Helpers::setActive('messages') }}">
+              <a href="/messages"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></a>
             </li>
-        <?php } 
-        else { ?>
-          <li><a href="/about">About</a></li>
-          <li><a href="/search">Search</a></li>
-          <li><a href="/auth/register">Sign Up</a></li>
-          <li><a href="/auth/login">Sign In</a></li>
-        <?php } ?>
+          
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

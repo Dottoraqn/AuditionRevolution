@@ -9,6 +9,16 @@
 @endsection
 
 @section('content')
-    <p>Audition Revolution is a small start up based in Atlanta, Georgia.</p>
-    
+
+@if (Auth::check())
+  @include('about')
+@else
+<div class="section landing">
+    <div class="container">
+      <p>Audition Revolution is a small start up based in Atlanta, Georgia.</p>    
+      <p> <a href="auth/register">Sign up</a> today or <a href="auth/login">login</a> now.</p>      
+    </div>
+</div>
+@endif 
+      
 @endsection

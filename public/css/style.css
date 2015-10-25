@@ -64,6 +64,21 @@
   border-top: transparent;
 }
 
+.cover {
+  padding-top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.landing {
+  font-size: 25;
+  text-align: center;
+}
+.site-wrapper-inner {
+  vertical-align: middle;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
