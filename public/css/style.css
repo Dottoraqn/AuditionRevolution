@@ -3,15 +3,24 @@
 }
 
 .navbar-default {
+  /*background-color: #ff7b34;*/
+  /*background-color: #7F5640;*/
   background-color: white;
   min-height: 200px;
-  border-bottom: 1px solid #99825c;
+  border-color: white;
+  /*border-bottom: 1px solid #99825c;*/
+}
+
+.navbar-header {
+  text-align: center;
 }
 
 .navbar-brand {
-  position: absolute;
-  bottom: 0;
-  height: 100;
+  position: fixed;
+  text-align: center;
+  /*bottom: 150;*/
+  /*right: 500;*/
+  /*height: 100;*/
 }
 
 .navbar-default .navbar-nav {
@@ -19,15 +28,43 @@
   bottom: 0;
   right: 0;
   display: block;
+  border-color: transparent;
+}
+
+.navbar-default > p {
+  right: 10;
+  color: black;
 }
 
 .navbar-default .navbar-nav > li {
   padding-left: 50;
   padding-right: 50;
   padding-top: 40;
-  border-left: 1px solid #99825c;
+  border-color: transparent;
+  /*border-left: 1px solid #99825c;
   border-right: 1px solid #99825c;
-  border-top: 1px solid #99825c;
+  border-top: 1px solid #99825c;*/
+}
+
+.navbar-default .navbar-nav > .active {
+  background-color: white;
+  border-color: transparent;
+}
+
+.navbar-default .navbar-nav > .active > a {
+  background-color: white;
+  border-color: transparent;
+}
+
+.navbar-default .navbar-nav > .active > a:hover {
+  background-color: white;
+}
+
+.glyphicon {
+   color: #7f5640;
+   line-height: 30px;
+   font-size: 35;
+   top: -10;
 }
 
 .navbar-collapse {

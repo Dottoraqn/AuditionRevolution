@@ -15,7 +15,6 @@
       </button>
       <a class="navbar-brand" href="/"><span><img src="img/logo.png"></span></a>
     </div>
-
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <p class="navbar-text navbar-right"><a href="/auth/logout" class="navbar-link">Logout</a></p>
@@ -23,10 +22,18 @@
 
         <?php /*if (Auth::check()) {*/
           if ($loggedIn==true) { ?>
-            <li><a href="/about"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
-            <li><a href="/search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
-            <li><a href="/profiles"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
-            <li><a href="/landing"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></a></li>
+            <li class="{{ Helpers::setActive('/') }}">
+              <a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+            </li>
+            <li class="{{ Helpers::setActive('search') }}">
+              <a href="/search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+            </li>
+            <li class="{{ Helpers::setActive('profiles') }}">
+              <a href="/profiles"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+            </li>
+            <li class="{{ Helpers::setActive('about') }}">
+              <a href="/about"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></a>
+            </li>
         <?php } 
         else { ?>
           <li><a href="/about">About</a></li>

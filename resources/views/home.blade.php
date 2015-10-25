@@ -10,4 +10,5 @@
 
 @section('content')
     <p>Audition Revolution is a small start up based in Atlanta, Georgia.</p>
+    
 @endsection
