@@ -220,3 +220,49 @@
 .img-center {
     margin: 0 auto;
 }
+
+/*MESSAGES PAGE*/
+.messageSelect {
+  position: relative;
+  float: left;
+  width: 20%;
+  height: 100%;
+  border-right: 1px solid #99825c;
+}
+
+.messageSelect li {
+  list-style-type: none;
+  margin-right: 10%;
+}
+
+.message {
+  position: relative;
+/*  border-bottom: 2px solid #040404;*/
+/*  padding: .2%;*/
+  text-align: center;
+  width: 100%;
+}
+
+.messageContent {
+  position: relative;
+  float: left;
+  width: 60%;
+  display: block;
+  margin-left: 3%;
+/*  margin-right: auto;*/
+/*  text-align: center;*/
+  
+}
+
+.subject {
+  position: relative;
+  padding: .5%;
+  font-weight: bold;
+}
+/*if(unread==true)bold;*/
+/*if subject longer than 50 chars 50+"..."*/
+
+.content {
+  position: relative;
+  padding: .5%;
+}
