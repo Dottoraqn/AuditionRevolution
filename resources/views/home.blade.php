@@ -11,7 +11,7 @@
 @section('content')
 
 @if (Auth::check())
-  @include('about')
+  @include('projects')
 @else
 <div class="section landing">
     <div class="container">

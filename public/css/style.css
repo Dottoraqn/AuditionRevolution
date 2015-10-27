@@ -2,6 +2,10 @@
   font-family: sans-serif "Helvetica";
 }
 
+/***********
+NAVBAR STUFF
+***********/
+
 .navbar-default {
   position: relative;
   min-height: 250px;
@@ -58,6 +62,64 @@
 .navbar-collapse {
   border-top: transparent;
 }
+
+/************
+PROJECT STUFF
+************/
+
+.projects .auditions {
+  height: 500;
+}
+
+.projects .panel-default .proj {
+  height: 100;
+}
+
+.projects .col-md-3 {
+  text-align: center;
+}
+
+.projects .mybutton {
+  margin-top: 15;
+  padding-bottom: 20;
+}
+
+.project button {
+  color: grey;
+}
+
+.projects h1 {
+  color: #b3b3b3;
+  font-size: 30;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.projects h2 {
+  color: grey;
+  font-size: 30;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.projects h3 {
+  margin-top: 20;
+  color: grey;
+  font-size: 35;
+  font-weight: lighter;
+  text-align: center;
+  padding-bottom: 14;
+}
+
+.projects p {
+  padding-top: 20;
+  color: grey;
+  font-size: 20;
+  font-weight: lighter;
+}
+/***********
+OTHER STUFF
+***********/
 
 .cover {
   padding-top: 0;
