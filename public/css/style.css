@@ -4,8 +4,8 @@
 
 .navbar-default {
   position: relative;
-  min-height: 300px;
-  margin-top: -50px;
+  min-height: 250px;
+  margin-top: 0;
   background-color: white;
   border-color: white;
 }
@@ -27,16 +27,11 @@
   border-color: transparent;
 }
 
-.navbar-default > p {
-  right: 0;
-  color: black;
-}
-
 .navbar-default .navbar-nav > li {
   left: 50%;
   padding-left: 50;
   padding-right: 50;
-  padding-top: 40;
+  padding-top: 25;
   border-color: transparent;
 }
 
@@ -55,8 +50,8 @@
 
 .glyphicon {
    color: white;
-   line-height: 30px;
-   font-size: 35;
+   line-height: 20px;
+   font-size: 25;
    top: -10;
 }
 
