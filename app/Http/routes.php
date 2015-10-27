@@ -37,9 +37,11 @@ Route::get('about', function () {
     return view('about');
 });
 Route::get('landing', function () {
+    return view('landing');
+});
+Route::get('messages', function () {
     return view('messages');
 });
-
 Route::get('projects/dashboard', function() {
     return view('projects/dashboard');
 });

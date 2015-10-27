@@ -5,10 +5,15 @@
         <link href="/css/style.css" rel="stylesheet">
     </head>
     
-     @include('navbar')
+    @if (Auth::check())
+      @include('navbar')
+    @else
+      <a href="/"><img src="/img/logo-large.png" class="cover"></a>
+    @endif 
      
-    <body>
-{{--         @section('sidebar')
+     
+    <body>      
+{{--    @section('sidebar')
             This is the master sidebar.
         @show
  --}}
@@ -19,4 +24,5 @@
     <script src="/js/jquery-1.11.3.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     </body>
+    
 </html>
