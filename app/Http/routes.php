@@ -61,7 +61,7 @@ Route::get('profile', ['middleware' => 'auth', function() {
   });
 }]);
 
-Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+// Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
 // Route::get('user/profile', [
 //     'as' => 'profile', 'uses' => 'UserController@showProfile'
