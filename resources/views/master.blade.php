@@ -5,6 +5,12 @@
         <link href="/css/style.css" rel="stylesheet">
         <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+        @if (Helpers::setActive('messages'))
+        <link href="/css/app.css" rel="stylesheet" type="text/css">
+        <script src="/js/app.js"></script>
+        <script src="/js/routes.js"></script>
+        <script src="/js/angular.js"></script>
+        @endif 
     </head>
     
     @if (Auth::check())
