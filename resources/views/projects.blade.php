@@ -1,62 +1,55 @@
-<html>
-    <head>
-        <title>App Name - @yield('title')</title>
-        <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>    -->
-    </head>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/">
-            Audition Revolution
-          </a>
-        </div>
-      </div>
-    </nav>
-    <body>
-      <section class="text">
-        <div class="container"> 
-          <div class="">
-            <button type="button" class="btn btn-default btn-lg">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Start New Project
-            </button>
-            <div class="row">
-              <div class="col-md-8"> 
-                
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">Casting Project #1</h3>
-                  </div>
-                  <div class="panel-body">
-                    Organizer: Jarrad
-                    Users: Erin, Emma, Kevin
-                    Roles: Role #1, Role #2, Role #3
-                    Type: Open Casting
-                  </div>
+<?php 
+  $talent = true;
+  $producer = true;  
+  $hasProjects = true;
+?>
+
+<section class="text">
+  <div class="container projects"> 
+    <div class="row">
+      <div class="col-md-9"> 
+        <h3> Your Active Auditions </h3>
+        <div class="panel panel-default auditions">
+          <div class="panel-body">
+            <?php if ($hasProjects) { ?>
+              <div class="panel panel-default proj">
+                <div class="panel-body">
+                  The Lion King
                 </div>
-                
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">Casting Project #1</h3>
-                  </div>
-                  <div class="panel-body">
-                    Organizer: Jarrad
-                    Users: Erin, Emma, Kevin
-                    Roles: Role #1, Role #2, Role #3
-                    Type: Open Casting
-                  </div>
+              </div>
+              <div class="panel panel-default proj">
+                <div class="panel-body">
+                  In the Heights
                 </div>
-                
               </div>
-              <div class="col-md-4"> 
-                  Start up
-              </div>
-            </div>
-            <div class="row">
-              Search through closed projects
-            </div>
+            <?php } else { ?>
+                <h1>You currently have no active auditions</h1>
+            <?php } ?>
           </div>
         </div>
-      </section>
-    </body>
-</html>
+      </div>
+      <div class="col-md-3">
+        <div class="mybutton">
+          <button class="btn btn-default btn-lg" type="submit">Start a Project</button>
+        </div>
+        <div class="panel panel-default auditions">
+          <div class="panel-body">
+            <?php if ($hasProjects) { ?>
+              <div class="mybutton">
+                <button class="btn btn-default btn-lg" type="submit">Start Audition Assistant</button>
+              </div>
+              <div class="mybutton">
+                <button class="btn btn-default btn-lg" type="submit">Start Audition Assistant</button>
+              </div>
+            <?php } else { ?>
+                <h2>Need some tips?</p>
+                <p>Search existing projects </p>
+                <p>Work on your profile </p>
+                <p>Send some messages </p>
+            <?php } ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
