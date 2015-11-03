@@ -2,10 +2,14 @@
   font-family: sans-serif "Helvetica";
 }
 
+/***********
+NAVBAR STUFF
+***********/
+
 .navbar-default {
   position: relative;
-  min-height: 300px;
-  margin-top: -50px;
+  min-height: 250px;
+  margin-top: 0;
   background-color: white;
   border-color: white;
 }
@@ -27,16 +31,11 @@
   border-color: transparent;
 }
 
-.navbar-default > p {
-  right: 0;
-  color: black;
-}
-
 .navbar-default .navbar-nav > li {
   left: 50%;
   padding-left: 50;
   padding-right: 50;
-  padding-top: 40;
+  padding-top: 25;
   border-color: transparent;
 }
 
@@ -55,14 +54,72 @@
 
 .glyphicon {
    color: white;
-   line-height: 30px;
-   font-size: 35;
+   line-height: 20px;
+   font-size: 25;
    top: -10;
 }
 
 .navbar-collapse {
   border-top: transparent;
 }
+
+/************
+PROJECT STUFF
+************/
+
+.projects .auditions {
+  height: 500;
+}
+
+.projects .panel-default .proj {
+  height: 100;
+}
+
+.projects .col-md-3 {
+  text-align: center;
+}
+
+.projects .mybutton {
+  margin-top: 15;
+  padding-bottom: 20;
+}
+
+.project button {
+  color: grey;
+}
+
+.projects h1 {
+  color: #b3b3b3;
+  font-size: 30;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.projects h2 {
+  color: grey;
+  font-size: 30;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.projects h3 {
+  margin-top: 20;
+  color: grey;
+  font-size: 35;
+  font-weight: lighter;
+  text-align: center;
+  padding-bottom: 14;
+}
+
+.projects p {
+  padding-top: 20;
+  color: grey;
+  font-size: 20;
+  font-weight: lighter;
+}
+/***********
+OTHER STUFF
+***********/
 
 .cover {
   padding-top: 0;

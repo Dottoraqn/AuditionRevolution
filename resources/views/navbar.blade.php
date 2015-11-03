@@ -16,8 +16,8 @@
       <p class="navbar-text navbar-right"><a href="/auth/logout" class="navbar-link">Logout</a></p>
       <ul class="nav navbar-nav navbar-right">
 
-            <li class="{{ Helpers::setActive('/') }}">
-              <a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+            <li class="{{ Helpers::setActive('home') }}">
+              <a href="/home"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
             </li>
             <li class="{{ Helpers::setActive('search') }}">
               <a href="/search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
