@@ -53,3 +53,5 @@
     </div>
   </div>
 </section>
+
+<script type="text/javascript" src="/js/projects.js"> </script>
