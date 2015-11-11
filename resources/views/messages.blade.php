@@ -10,7 +10,7 @@
 
 @section('content')
 
-<div zf-panel position="left" id="sub-nav" class="fast bounceInOut medium-3 medium-grid-content">
+<div zf-panel position="left" id="sub-nav" class="fast bounceInOut col-md-3 medium-grid-content">
 	<a class="button expand" zf-open="compose">Compose</a>
 	<section class="block-list with-icons">
 	  <ul>
@@ -35,7 +35,7 @@
 	</section>
 </div>
 
-<div class="small-12 medium-3 messages grid-content">
+<div class="small-12 col-md-3 messages grid-content">
   <a class="button secondary expand hide-for-medium" zf-open="sub-nav">This</a>
   <section class="block-list">
   	<li>
