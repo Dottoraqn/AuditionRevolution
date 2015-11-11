@@ -61,6 +61,20 @@ Route::get('profile', ['middleware' => 'auth', function() {
   });
 }]);
 
+Route::get('user/{id}', 'User\UserController@showProfile');
+
+Route::get('/production_companies', function() {
+  return view('production_company/index');
+});
+
+Route::post('/production_company', function(Request $request) {
+  return view('production_company/index');
+});
+
+Route::post('/production_company_show/{id}', function($id) {
+
+});
+
 // Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
 // Route::get('user/profile', [
