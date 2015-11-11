@@ -18,9 +18,6 @@ Route::get('/', function () {
 Route::get('projects', function () {
     return view('projects');
 });
-Route::get('edit_modal', function () {
-    return view('projects');
-});
 Route::get('blade', function () {
     return view('master');
 });
@@ -63,6 +60,20 @@ Route::get('profile', ['middleware' => 'auth', function() {
       return view('profiles');
   });
 }]);
+
+Route::get('user/{id}', 'User\UserController@showProfile');
+
+Route::get('/production_companies', function() {
+  return view('production_company/index');
+});
+
+Route::post('/production_company', function(Request $request) {
+  return view('production_company/index');
+});
+
+Route::post('/production_company_show/{id}', function($id) {
+
+});
 
 // Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 

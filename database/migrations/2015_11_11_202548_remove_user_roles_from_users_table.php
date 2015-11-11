@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UserRoleType extends Migration
+class RemoveUserRolesFromUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,10 @@ class UserRoleType extends Migration
      */
     public function up()
     {
-        Schema::create('user_role_type', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
+        //
+        Schema::table('users', function ($table) {
+            $table->dropColumn('user_role_type');
+            $table->dropColumn('user_id');
         });
     }
 
