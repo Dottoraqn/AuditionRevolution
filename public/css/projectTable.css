@@ -1,0 +1,38 @@
+tr {
+width: 100%;
+display: inline-table;
+height:500px;                // <-- the rows height 
+border: none;
+}
+
+table {
+ border: none;
+}
+tbody {
+  overflow-y: scroll;      
+  height: 200px;            //  <-- Select the height of the body
+  width: 100%;
+  position: absolute;
+}
+
+table {
+  border: none;
+  border-color: transparent;
+}
+
+.table th, .table td { 
+     border-top: none !important; 
+ }
+
+.borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+    border: none !important;
+}
+
+.table-no-border>thead>tr>th, 
+.table-no-border>tbody>tr>th, 
+.table-no-border>tfoot>tr>th, 
+.table-no-border>thead>tr>td, 
+.table-no-border>tbody>tr>td, 
+.table-no-border>tfoot>tr>td {
+  border-top: none; 
+}

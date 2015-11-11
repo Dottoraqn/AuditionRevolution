@@ -18,6 +18,9 @@ Route::get('/', function () {
 Route::get('projects', function () {
     return view('projects');
 });
+Route::get('edit_modal', function () {
+    return view('projects');
+});
 Route::get('blade', function () {
     return view('master');
 });

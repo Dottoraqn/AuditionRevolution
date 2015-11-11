@@ -32,6 +32,10 @@ elixir(function(mix) {
     mix.less('app.less');
 });
 
+// elixir(function(mix) {
+//     mix.copy('resources/assets/bootstrap-navigable-table', 'public');
+// });
+
 
 /**
  * Logic for LiveReload to work properly on watch task.
