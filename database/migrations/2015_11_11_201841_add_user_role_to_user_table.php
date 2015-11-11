@@ -13,8 +13,15 @@ class AddUserRoleToUserTable extends Migration
     public function up()
     {
         //
-        Schema::table('users', function ($table) {
+        if (!Schema::hasTable('user_role_type')) {
+        Schema::create('user_role_type', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('role');
+        });}
+        Schema::create('user_user_role_type', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('user_role_type')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->foreign('user_role_type')->references('id')->on('user_role_type');
             $table->foreign('user_id')->references('id')->on('users');
         });
