@@ -19,7 +19,10 @@ Route::get('projects', function () {
     return view('projects');
 });
 Route::get('edit_modal', function () {
-    return view('projects');
+    return view('edit_modal');
+});
+Route::get('startProject', function () {
+    return view('startProject');
 });
 Route::get('blade', function () {
     return view('master');

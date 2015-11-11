@@ -26,10 +26,10 @@
         <div class="panel panel-default auditions">
           <div class="panel-body">
             <div class="mybutton">
-              <button class="btn btn-default btn-lg" id="startProject" type="submit">Start a Project</button>
+              <button class="btn btn-default btn-lg" type="button" id="startProject" data-toggle="modal" data-target=".start-modal-lg">Start a Project</button>
             </div>
             <div class="mybutton">
-              <button class="btn btn-default btn-lg" id="startProject" type="submit">Start Audition Assistant</button>
+              <button class="btn btn-default btn-lg" id="startAA" type="submit">Start Audition Assistant</button>
             </div>  
             <br>
             <br>
@@ -46,5 +46,6 @@
 </section>
 
 @include('edit_modal');
+@include('startProject');
 
 <script type="text/javascript" src="/js/projects.js"> </script>

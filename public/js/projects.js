@@ -49,6 +49,10 @@ function edit_project( project_id ) {
     $('#edit').modal('show');
 }
 
+function startProject() {
+    $('#startProject').modal('show');
+}
+
 function delete_project( project ) {
   var project_id = project.id; 
 
