@@ -14,6 +14,7 @@ class CreateUserAvatarTable extends Migration
     {
         Schema::create('user_avatar', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('file_name');
             $table->string('thumbnail_url');

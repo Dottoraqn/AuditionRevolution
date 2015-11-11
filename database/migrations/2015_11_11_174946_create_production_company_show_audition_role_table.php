@@ -13,9 +13,12 @@ class CreateProductionCompanyShowAuditionRoleTable extends Migration
     public function up()
     {
         //
+        if (!Schema::hasTable('production_company_show_audition_role')) {
        Schema::create('production_company_show_audition_role', function (Blueprint $table) {
             $table->increments('id');
-            $table->foreign('production_company_show_audition_id')->references('id')->on('production_company_show_audtion');
+            $table->integer('audition_id')->unsigned();
+            $table->foreign('audition_id')->references('id')->on('production_company_show_audtion');
+            $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('character_name');
             $table->string('character_ethnicity');
@@ -26,6 +29,7 @@ class CreateProductionCompanyShowAuditionRoleTable extends Migration
             $table->integer('audition_role_state');
             $table->timestamps();
         });
+   }
     }
 
     /**

@@ -13,15 +13,20 @@ class CreateProductionCompanyShowAuditionUserApplicantTable extends Migration
     public function up()
     {
         //
+        if (!Schema::hasTable('production_company_show_audition_user_applicant')) {
        Schema::create('production_company_show_audition_user_applicant', function (Blueprint $table) {
             $table->increments('id');
-            $table->foreign('production_company_show_audition_id')->references('id')->on('production_company_show_audtion');
+            $table->integer('audition_id')->unsigned();
+            $table->integer('user_id')->unsigned();
+            $table->integer('annotator_id')->unsigned();
+            $table->foreign('audition_id')->references('id')->on('production_company_show_audtion');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('annotator_id')->references('id')->on('users');
             $table->text('annotations');
             $table->integer('audition_role_state');
             $table->timestamps();
         });
+   }
     }
 
     /**

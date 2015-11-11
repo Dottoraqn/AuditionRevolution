@@ -13,12 +13,16 @@ class CreateProductionCompanyApplicantTable extends Migration
     public function up()
     {
         //
+        if (!Schema::hasTable('production_company_applicant')) {
        Schema::create('production_company_applicant', function (Blueprint $table) {
             $table->increments('id');
-            $table->foreign('production_company_show_audition_id')->references('id')->on('production_company_show_audtion');
+            $table->integer('audition_id')->unsigned();
+            $table->integer('user_id')->unsigned();
+            $table->foreign('audtion_id')->references('id')->on('production_company_show_audition');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
+   }
     }
 
     /**

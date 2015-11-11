@@ -13,11 +13,15 @@ class CreateUserUserAuditionMaterialTable extends Migration
     public function up()
     {
         //
+        if (!Schema::hasTable('production_company_show_audition_user_applicant')) {
         Schema::create('user_user_audition_material', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->integer('user_audition_material')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('user_audtion_material')->references('id')->on('user_audition_material');
+            $table->foreign('user_audition_material')->references('id')->on('user_audition_material');
         });
+    }
     }
 
     /**

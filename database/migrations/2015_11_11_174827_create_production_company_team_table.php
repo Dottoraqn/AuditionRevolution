@@ -14,6 +14,8 @@ class CreateProductionCompanyTeamTable extends Migration
     {
         Schema::create('production_company_team', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->integer('production_company_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('production_company_id')->references('id')->on('production_company');
             $table->string('name');

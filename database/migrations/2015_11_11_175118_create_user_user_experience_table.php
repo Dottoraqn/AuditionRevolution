@@ -15,6 +15,8 @@ class CreateUserUserExperienceTable extends Migration
         //
         Schema::create('user_user_experience', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_resume')->unsigned();
+            $table->integer('user_experience')->unsigned();
             $table->foreign('user_resume')->references('id')->on('user_resume');
             $table->foreign('user_experience')->references('id')->on('user_experience');
         });
