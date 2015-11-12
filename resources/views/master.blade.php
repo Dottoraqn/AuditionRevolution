@@ -10,6 +10,13 @@
         <script src="/js/app.js"></script>
         <script src="/js/routes.js"></script>
         <script src="/js/angular.js"></script>
+        <script src="/js/jquery-1.11.3.min.js"></script>
+        @endif 
+        @if (Helpers::setActive('home'))
+        <link href="/css/projectTable.css" rel="stylesheet">
+        @endif 
+        @if (Helpers::setActive('projects'))
+        <link href="/css/projectTable.css" rel="stylesheet">
         @endif 
     </head>
     
