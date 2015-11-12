@@ -13,7 +13,7 @@ class CreateProductionCompanyShowTable extends Migration
     public function up()
     {
         //
-        if (!Schema::hasTable('user_experience')) {
+        if (!Schema::hasTable('production_company_show')) {
             Schema::create('production_company_show', function (Blueprint $table) {
                 $table->increments('id');
                 $table->integer('production_company_id')->unsigned();

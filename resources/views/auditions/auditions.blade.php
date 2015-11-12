@@ -1,1 +1,1 @@
-<?php echo $auditions; ?>
+<?php die(json_encode($auditions)); ?>
