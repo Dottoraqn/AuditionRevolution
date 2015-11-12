@@ -68,6 +68,7 @@ Route::get('profile', ['middleware' => 'auth', function() {
 }]);
 
 Route::get('user/{id}', 'User\UserController@showProfile');
+Route::get('auditions', 'ProductionShowAudition\ProductionShowAuditionController@index');
 
 Route::get('/production_companies', function() {
   return view('production_company/index');
