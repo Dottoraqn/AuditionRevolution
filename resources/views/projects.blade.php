@@ -2,6 +2,11 @@
   $talent = true;
   $producer = true;  
   $hasProjects = true;
+  
+  $user_id = 2;
+  $id = 1;
+  
+  //die(json_encode($auditions));
 ?>
 
 <section class="text">

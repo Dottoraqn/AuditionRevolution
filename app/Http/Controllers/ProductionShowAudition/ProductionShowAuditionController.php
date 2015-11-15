@@ -23,4 +23,18 @@ class ProductionShowAuditionController extends Controller
     {
         return view('audition.audition', ['production_company_show_audition' => ProductionShowAudition::findOrFail($id)]);
     }
+    
+    public function getAudition($user_id, $id)
+    {
+        $first = DB::table('user_auditions') ->where($user_id);
+        $userAudition = DB::table('user_auditions')->where('id', '=', $id)->union($first)->get();
+        return view('projects', ['userAudition' => $userAudition]);
+    }
+    
+    public function getAllAuditions($user)
+    {
+      $allAuditions = array();
+      $allAuditions = DB::table('user_auditions') ->where($user_id);
+      return view('projects', ['allAuditions' => $allAuditions]);
+    }
 }
