@@ -1,37 +1,8 @@
 window.onload = initialize;
 
-var project_one = {
-  id: 1,
-  name: "The Lion King",
-  owner: "Jarrad Howell",
-  project: "link"
-};
-
-var project_two = {
-  id: 2,
-  name: "In the Heights",
-  owner: "Jarrad Howell",
-  project: "link"
-};
-
-var project_three = {
-  id: 3,
-  name: "Wicked",
-  owner: "Jarrad Howell",
-  project: "link"
-};
-
-var project_four = {
-  id: 4,
-  name: "Babel",
-  owner: "Jarrad Howell",
-  project: "link"
-};
-
-var projects_array = [project_one, project_two, project_three, project_four];
 
 function initialize() {
-  load_projects(projects_array);
+  //load_projects(projects_array);
 }
 
 function load_projects() {

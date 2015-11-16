@@ -11,13 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-		// return User::all();
-    return view('home');
-});
-Route::get('projects', function () {
-    return view('projects');
-});
 Route::get('edit_modal', function () {
     return view('edit_modal');
 });
@@ -25,13 +18,10 @@ Route::get('startProject', function () {
     return view('startProject');
 });
 Route::get('blade', function () {
-    return view('master');
+    return view('layouts.master');
 });
-Route::get('home', function () {
-    return view('home');
-});
-Route::get('navbar', function () {
-    return view('navbar');
+Route::get('layouts', function () {
+    return view('layouts.navbar');
 });
 Route::get('profiles', function () {
     return view('profiles');
@@ -68,7 +58,14 @@ Route::get('profile', ['middleware' => 'auth', function() {
 }]);
 
 Route::get('user/{id}', 'User\UserController@showProfile');
+
+
+// project page routes
+Route::get('/', 'ProductionShowAudition\ProductionShowAuditionController@index');
 Route::get('auditions', 'ProductionShowAudition\ProductionShowAuditionController@index');
+Route::get('auditions/create', 'ProductionShowAudition\ProductionShowAuditionController@create');
+Route::get('auditions/{id}', 'ProductionShowAudition\ProductionShowAuditionController@show');
+Route::post('auditions', 'ProductionShowAudition\ProductionShowAuditionController@store');
 
 Route::get('/production_companies', function() {
   return view('production_company/index');

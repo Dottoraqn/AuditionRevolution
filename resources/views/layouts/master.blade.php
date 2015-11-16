@@ -12,7 +12,10 @@
         <script src="/js/angular.js"></script>
         <script src="/js/jquery-1.11.3.min.js"></script>
         @endif 
-        @if (Helpers::setActive('home'))
+        @if (Helpers::setActive('/'))
+        <link href="/css/projectTable.css" rel="stylesheet">
+        @endif 
+        @if (Helpers::setActive('auditions'))
         <link href="/css/projectTable.css" rel="stylesheet">
         @endif 
         @if (Helpers::setActive('projects'))
@@ -21,20 +24,16 @@
     </head>
     
     @if (Auth::check())
-      @include('navbar')
+      @include('layouts.navbar')
     @else
       <a href="/"><img src="/img/logo-large.png" class="cover"></a>
     @endif 
      
      
     <body>      
-{{--    @section('sidebar')
-            This is the master sidebar.
-        @show
- --}}
     @yield('content')
 
-    @include('footer')
+    @include('layouts.footer')
 
     <script src="/js/jquery-1.11.3.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>

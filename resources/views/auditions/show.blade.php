@@ -1,0 +1,20 @@
+
+EDIT {{$aud->name}}
+{!! Form::open(['url' => 'auditions']) !!}
+
+<div class="form-group"> 
+  {!! Form::label('name', 'Name:') !!}
+  {!! Form::text('name', null, ['class' => 'form-control']) !!}
+</div>
+
+<div class="form-group"> 
+  {!! Form::label('location', 'Location:') !!}
+  {!! Form::text('location', null, ['class' => 'form-control']) !!}
+</div>   
+
+<div class="form-group"> 
+  {!! Form::label('description', 'Description:') !!}
+  {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
+</div>       
+
+{!! Form::close() !!}

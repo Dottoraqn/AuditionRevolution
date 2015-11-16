@@ -1,7 +1,8 @@
 tr {
-width: 100%;
-display: inline-table;
-height:500px;                // <-- the rows height 
+border: none;
+}
+
+td {
 border: none;
 }
 
@@ -9,9 +10,8 @@ table {
  border: none;
 }
 tbody {
-  overflow-y: scroll;      
-  height: 200px;            //  <-- Select the height of the body
-  width: 100%;
+  overflow-y: scroll; 
+  display: inline-table;     
   position: absolute;
 }
 
