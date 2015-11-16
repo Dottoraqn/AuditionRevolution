@@ -17,10 +17,10 @@
               <table data-navigable-spy class="table table-no-border" id="projects">
                 <tbody>
                 @foreach($auditions as $audition)
-                <tr>
+                <tr>         
                   <td>{{$audition->name}}</td>
                   <td>{{$audition->location}}</td>
-                  <td><a href="auditions/{{$audition->id}}" onclick="">Edit</a></td>
+                  <td><a href="/home/{{$audition->id}}" onclick="editable()">Edit</a></td>
                 <tr>
                 @endforeach
                 </tbody>
@@ -64,11 +64,30 @@
 @endif
 @endsection
 
-@include('auditions.create')
+@include('home.create')
 
+<script src="/js/jquery-1.11.3.min.js"></script>
+<script src="/js/jquery-ui.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/js/projects.js"> </script>
-<script> 
-var Name = document.getElementById("utente").value;
+<script src="/js/jqueryui-editable.js"></script>
+<script src="/js/tooltip.js"></script>
 
-document.write(Name);
+<script> 
+//$.fn.editable.defaults.url = '/post'; 
+//$form.editableform('render');
+$.fn.editable.defaults.mode = 'inline';
+
+$('#username').editable();
+
+$('#username').editable({
+       url: '/post',
+       type: 'text',
+       pk: 1,
+       name: 'username',
+       title: 'Enter username'
+});
+
+
+    
 </script>

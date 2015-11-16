@@ -62,10 +62,10 @@ Route::get('user/{id}', 'User\UserController@showProfile');
 
 // project page routes
 Route::get('/', 'ProductionShowAudition\ProductionShowAuditionController@index');
-Route::get('auditions', 'ProductionShowAudition\ProductionShowAuditionController@index');
-Route::get('auditions/create', 'ProductionShowAudition\ProductionShowAuditionController@create');
-Route::get('auditions/{id}', 'ProductionShowAudition\ProductionShowAuditionController@show');
-Route::post('auditions', 'ProductionShowAudition\ProductionShowAuditionController@store');
+Route::get('home', 'ProductionShowAudition\ProductionShowAuditionController@index');
+Route::get('home/create', 'ProductionShowAudition\ProductionShowAuditionController@create');
+Route::get('home/{id}', 'ProductionShowAudition\ProductionShowAuditionController@show');
+Route::post('home', 'ProductionShowAudition\ProductionShowAuditionController@store');
 
 Route::get('/production_companies', function() {
   return view('production_company/index');

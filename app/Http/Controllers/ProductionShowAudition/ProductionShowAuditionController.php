@@ -26,7 +26,7 @@ class ProductionShowAuditionController extends Controller
     public function index()
     {
       $auditions = ProductionShowAudition::latest('created_at')->get();      
-      return view('auditions.index', compact('auditions'));
+      return view('home.index', compact('auditions'));
     }  
     
     public function show($id)
@@ -37,8 +37,8 @@ class ProductionShowAuditionController extends Controller
       // $allAuditions = array();
       // $allAuditions = DB::table('user_auditions') ->where($user_id);
       
-      $aud = ProductionShowAudition::find($id);
-      return view('auditions.show', compact('aud'));
+      $auditionById = ProductionShowAudition::find($id);
+      return view('home.show', compact('auditionById'));
     }  
 
     protected function create()
@@ -46,7 +46,7 @@ class ProductionShowAuditionController extends Controller
       //$shows = ProductionShowAudition::where('user_id', 2)->get();
 
       $auditions = ProductionShowAudition::all();
-      return view('auditions.create', compact('auditions'));
+      return view('home.create', compact('auditions'));
       
       // create([
       //     'name' => $data['name'],
@@ -55,11 +55,13 @@ class ProductionShowAuditionController extends Controller
       // ]);  
     }
     
-    protected function update()
-    {
-
-      $input = Request::all();
-      return $input;
+     public function quickUpdate()
+     {
+  //       $inputs = Request::all();
+  //       $serie = Serie::find($inputs['pk']);
+  //       $serie->$inputs['name'] = $inputs['value'];
+  //       return $serie->save();
+  //}
       
     }
   
@@ -68,7 +70,7 @@ class ProductionShowAuditionController extends Controller
       $input = Request::all();
       ProductionShowAudition::create($input);
 
-      return redirect('auditions');
+      return redirect('home');
       
     
     }  

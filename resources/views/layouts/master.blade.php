@@ -5,6 +5,7 @@
         <link href="/css/style.css" rel="stylesheet">
         <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+        <link href="/css/jqueryui-editable.css" rel="stylesheet">
         @if (Helpers::setActive('messages'))
         <link href="/css/app.css" rel="stylesheet" type="text/css">
         <script src="/js/app.js"></script>

@@ -26,8 +26,8 @@
         <li class="{{ Helpers::setActive('search') }}">
           <a href="/search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
         </li>
-        <li class="{{ Helpers::setActive('auditions') }} {{ Helpers::setActive('/') }}">
-          <a href="/auditions"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+        <li class="{{ Helpers::setActive('home') }} {{ Helpers::setActive('/') }}">
+          <a href="/home"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
         </li>
           
       </ul>

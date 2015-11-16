@@ -1,5 +1,5 @@
 <!-- resources/views/auth/register.blade.php -->
-@extends('master')
+@extends('layouts.master')
 
 @section('title', 'Page Title')
 
