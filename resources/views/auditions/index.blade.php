@@ -65,7 +65,6 @@
 @endsection
 
 @include('auditions.create')
-@include('auditions.show')
 
 <script type="text/javascript" src="/js/projects.js"> </script>
 <script> 

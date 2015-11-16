@@ -1,5 +1,5 @@
 
-EDIT {{$aud->name}}
+EDIT 
 {!! Form::open(['url' => 'auditions']) !!}
 
 <div class="form-group"> 
