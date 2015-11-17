@@ -66,6 +66,7 @@ Route::get('home', 'ProductionShowAudition\ProductionShowAuditionController@inde
 Route::get('home/create', 'ProductionShowAudition\ProductionShowAuditionController@create');
 Route::get('home/{id}', 'ProductionShowAudition\ProductionShowAuditionController@show');
 Route::post('home', 'ProductionShowAudition\ProductionShowAuditionController@store');
+Route::post('home', 'ProductionShowAudition\ProductionShowAuditionController@postQuickUpdate');
 
 Route::get('/production_companies', function() {
   return view('production_company/index');

@@ -36,4 +36,23 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+
+
+    // public function rolesPivot()
+    // {
+    //     return $this->belongsTo('App\UserUserRoleType');
+    // }    
+       /*
+       * Get the roles a user has
+      */
+    //  public function roles()
+    //  {
+    //      return $this->belongsToMany('App\User', 'user_user_role_type');
+    //  }
+    //  
+    //  public function assignRole($title)
+    //  {       
+    //      $this->roles()->attach($title);
+    //  }
 }

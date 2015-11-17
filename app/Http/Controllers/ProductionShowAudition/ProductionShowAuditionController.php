@@ -55,15 +55,20 @@ class ProductionShowAuditionController extends Controller
       // ]);  
     }
     
-     public function quickUpdate()
-     {
-  //       $inputs = Request::all();
-  //       $serie = Serie::find($inputs['pk']);
-  //       $serie->$inputs['name'] = $inputs['value'];
-  //       return $serie->save();
-  //}
-      
+    public function postQuickUpdate()
+    {
+      $id = Input::get('pk');
+      //get the new value
+      $newName = Input::get('value');
+      //get the Row to be updated with new value
+      $data = ProductionShowAudition::whereId($id)->first();
+      $data->name = $newName;
+      if($data->save()) 
+          return Response::json(array('status'=>1));
+      else 
+          return Response::json(array('status'=>0));
     }
+    
   
     protected function store()
     {

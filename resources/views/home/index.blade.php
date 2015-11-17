@@ -2,6 +2,10 @@
 
 @section('title', 'Page Title')
 
+@section('head')
+
+@endsection
+
 @section('content')
 
 @if (Auth::check())
@@ -18,9 +22,10 @@
                 <tbody>
                 @foreach($auditions as $audition)
                 <tr>         
-                  <td>{{$audition->name}}</td>
-                  <td>{{$audition->location}}</td>
-                  <td><a href="/home/{{$audition->id}}" onclick="editable()">Edit</a></td>
+                  <td><a class="editable-click editable-disabled" href="javascript:;" data-type="text" data-placement="right" 
+                  class="pUpdate" id="name{{$audition->id}}" data-pk="{{$audition->id}}">{{$audition->name}}</a></td>
+                  <td><a class="editable-click editable-disabled" href="javascript:;" data-type="text" data-placement="right" id="loc{{$audition->id}}">{{$audition->location}}</a></td>
+                  <td><a onclick="clickEnable({{$audition->id}})" href="javascript:;" value="true" id="{{$audition->id}}">Edit</a></td>
                 <tr>
                 @endforeach
                 </tbody>
@@ -38,7 +43,7 @@
               <button class="btn btn-default btn-lg" type="button" id="create" data-toggle="modal" data-target=".start-modal-lg">Start a Project</button>
             </div>
             <div class="mybutton">
-              <button class="btn btn-default btn-lg" id="startAA" type="submit">Start Audition Assistant</button>
+              <button class="btn btn-default btn-lg" id="save" type="submit">Save Changes</button>
             </div>  
             <br>
             <br>
@@ -65,29 +70,3 @@
 @endsection
 
 @include('home.create')
-
-<script src="/js/jquery-1.11.3.min.js"></script>
-<script src="/js/jquery-ui.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/js/projects.js"> </script>
-<script src="/js/jqueryui-editable.js"></script>
-<script src="/js/tooltip.js"></script>
-
-<script> 
-//$.fn.editable.defaults.url = '/post'; 
-//$form.editableform('render');
-$.fn.editable.defaults.mode = 'inline';
-
-$('#username').editable();
-
-$('#username').editable({
-       url: '/post',
-       type: 'text',
-       pk: 1,
-       name: 'username',
-       title: 'Enter username'
-});
-
-
-    
-</script>

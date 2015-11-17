@@ -23,4 +23,10 @@ class UserController extends Controller
     {
         return view('user.profile', ['user' => User::findOrFail($id)]);
     }
+    
+    // public function hasRole()
+    // {
+    //      $roles = $this->roles->toArray();
+    //      return !empty($roles);
+    // }
 }
