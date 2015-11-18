@@ -36,6 +36,13 @@ Route::get('landing', function () {
 Route::get('messages', function () {
     return view('messages');
 });
+
+Route::get('messages', [
+    'middleware' => 'acl:manage_user',
+    'as' => 'users.admin',
+    'uses' => 'UserController@index'
+]);
+
 Route::get('projects/dashboard', function() {
     return view('projects/dashboard');
 });
