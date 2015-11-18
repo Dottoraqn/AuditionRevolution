@@ -57,25 +57,28 @@ class ProductionShowAuditionController extends Controller
     
     public function postQuickUpdate()
     {
-      $id = Input::get('pk');
-      //get the new value
-      $newName = Input::get('value');
-      //get the Row to be updated with new value
-      $data = ProductionShowAudition::whereId($id)->first();
-      $data->name = $newName;
-      if($data->save()) 
-          return Response::json(array('status'=>1));
-      else 
-          return Response::json(array('status'=>0));
+//      $id = Input::get('pk');
+//      //get the new value
+//      $newName = Input::get('value');
+//      //get the Row to be updated with new value
+//      $data = ProductionShowAudition::whereId($id)->first();
+//      $data->name = $newName;
+//      if($data->save())
+//          return Response::json(array('status'=>1));
+//      else
+//          return Response::json(array('status'=>0));
     }
     
   
     protected function store()
     {
       $input = Request::all();
+      $input['organizer_id'] = \Auth::id();
+      $input['show_id'] = 1;
       ProductionShowAudition::create($input);
 
-      return redirect('home');
+        return $input;
+//      return redirect('home');
       
     
     }  

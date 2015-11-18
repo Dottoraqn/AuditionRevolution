@@ -21,9 +21,10 @@ class ProductionShowAudition extends Model
   protected $fillable = ['name', 
     'description',
     'location',
-    'name',
     'audition_date',
-    'audition_time'
+    'audition_time',
+    'organizer_id',
+    'show_id'
   ];
 
 }

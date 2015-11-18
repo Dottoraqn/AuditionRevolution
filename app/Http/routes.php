@@ -71,20 +71,12 @@ Route::get('home', 'ProductionShowAudition\ProductionShowAuditionController@inde
 Route::get('home/create', 'ProductionShowAudition\ProductionShowAuditionController@create');
 Route::get('home/{id}', 'ProductionShowAudition\ProductionShowAuditionController@show');
 Route::post('home', 'ProductionShowAudition\ProductionShowAuditionController@store');
-Route::post('home', 'ProductionShowAudition\ProductionShowAuditionController@postQuickUpdate');
+//Route::post('home', 'ProductionShowAudition\ProductionShowAuditionController@postQuickUpdate');
 
 Route::get('production_companies', 'ProductionCompanyController@index');
 Route::get('production_companies/create', 'ProductionCompanyController@create');
 Route::get('production_companies/{id}', 'ProductionCompanyController@show');
 Route::post('production_companies', 'ProductionCompanyController@store');
-
-Route::post('/production_company', function(Request $request) {
-  return view('production_company/index');
-});
-
-Route::post('/production_company_show/{id}', function($id) {
-
-});
 
 // Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 

@@ -6,17 +6,17 @@
               <h4 class="modal-title" id="exampleModalLabel">Begin a Project</h4>
         </div>
         <div class="modal-body">
-          {!! Form::open(['url' => 'auditions']) !!}
+          {!! Form::open(['url' => 'home']) !!}
 
           <div class="form-group"> 
             {!! Form::label('name', 'Name:') !!}
             {!! Form::text('name', null, ['class' => 'form-control']) !!}
           </div>
 
-          <div class="form-group"> 
-            {!! Form::label('location', 'Location:') !!}
-            {!! Form::text('location', null, ['class' => 'form-control']) !!}
-          </div>   
+          {{--<div class="form-group"> --}}
+            {{--{!! Form::label('location', 'Location:') !!}--}}
+            {{--{!! Form::text('location', null, ['class' => 'form-control']) !!}--}}
+          {{--</div>   --}}
 
           <div class="form-group"> 
             {!! Form::label('description', 'Description:') !!}

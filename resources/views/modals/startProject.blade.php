@@ -6,7 +6,7 @@
               <h4 class="modal-title" id="exampleModalLabel">Begin a Project</h4>
         </div>
         <div class="modal-body">
-          {!! Form::open(['url' => 'auditions']) !!}
+          {!! Form::open(['url' => 'home']) !!}
 
           <div class="form-group"> 
             {!! Form::label('name', 'Name:') !!}
