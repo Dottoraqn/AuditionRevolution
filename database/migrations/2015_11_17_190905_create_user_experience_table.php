@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserAuditionMaterialTable extends Migration
+class CreateUserExperienceTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,16 @@ class CreateUserAuditionMaterialTable extends Migration
      */
     public function up()
     {
-        //
-        Schema::create('user_audtion_material', function (Blueprint $table) {
+        Schema::create('user_experience', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->string('name');
-            $table->string('audition_material_type');
-            $table->string('audition_material_url');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('show_name');
+            $table->string('role');
             $table->text('description');
+            $table->string('production_company');
+            $table->date('start_date');
+            $table->date('end_date');
             $table->timestamps();
         });
     }
@@ -32,7 +33,6 @@ class CreateUserAuditionMaterialTable extends Migration
      */
     public function down()
     {
-        //
-        Schema::drop('user_audtion_material');
+        Schema::drop('user_experience');
     }
 }

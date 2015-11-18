@@ -29,9 +29,7 @@ Route::get('profiles', function () {
 Route::get('search', function () {
     return view('search');
 });
-Route::get('about', function () {
-    return view('about');
-});
+Route::get('about', 'PagesController@about');
 Route::get('landing', function () {
     return view('landing');
 });
@@ -68,9 +66,10 @@ Route::get('home/{id}', 'ProductionShowAudition\ProductionShowAuditionController
 Route::post('home', 'ProductionShowAudition\ProductionShowAuditionController@store');
 Route::post('home', 'ProductionShowAudition\ProductionShowAuditionController@postQuickUpdate');
 
-Route::get('/production_companies', function() {
-  return view('production_company/index');
-});
+Route::get('production_companies', 'ProductionCompanyController@index');
+Route::get('production_companies/create', 'ProductionCompanyController@create');
+Route::get('production_companies/{id}', 'ProductionCompanyController@show');
+Route::post('production_companies', 'ProductionCompanyController@store');
 
 Route::post('/production_company', function(Request $request) {
   return view('production_company/index');

@@ -9,6 +9,11 @@ use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use App\DB\User\Traits\UserACL;
+use App\DB\User\Traits\UserAccessors;
+use App\DB\User\Traits\UserQueryScopes;
+use App\DB\User\Traits\UserRelationShips;
+
 
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
@@ -28,7 +33,18 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = [
+        'username',
+        'first_name',
+        'last_name',
+        'email',
+        'password',
+        'phone_number',
+        'address',
+        'city',
+        'state',
+        'zip'
+    ];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -37,22 +53,12 @@ class User extends Model implements AuthenticatableContract,
      */
     protected $hidden = ['password', 'remember_token'];
 
-
-
-    // public function rolesPivot()
-    // {
-    //     return $this->belongsTo('App\UserUserRoleType');
-    // }    
-       /*
-       * Get the roles a user has
-      */
-    //  public function roles()
-    //  {
-    //      return $this->belongsToMany('App\User', 'user_user_role_type');
-    //  }
-    //  
-    //  public function assignRole($title)
-    //  {       
-    //      $this->roles()->attach($title);
-    //  }
+    /**
+     * user can have many production companies
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function production_companies()
+    {
+        return $this->hasMany('App\ProductionCompany', 'owner_id');
+    }
 }

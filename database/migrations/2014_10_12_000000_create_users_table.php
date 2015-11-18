@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProductionCompanyTable extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,16 +12,20 @@ class CreateProductionCompanyTable extends Migration
      */
     public function up()
     {
-        //
-        Schema::create('production_company', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('username');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('email')->unique();
+            $table->string('phone_number');
             $table->string('address');
             $table->string('city');
             $table->string('state');
-            $table->string('website');
-            $table->string('union');
-            $table->string('email');
+            $table->integer('zip');
+            $table->string('qr_code');
+            $table->string('password', 60);
+            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -33,7 +37,6 @@ class CreateProductionCompanyTable extends Migration
      */
     public function down()
     {
-        //
-        Schema::drop('production_company');
+        Schema::drop('users');
     }
 }

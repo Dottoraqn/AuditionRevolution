@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProductionCompanyShowAuditionRoleTable extends Migration
+class CreateProductionCompanyShowAuditionRole extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,10 @@ class CreateProductionCompanyShowAuditionRoleTable extends Migration
      */
     public function up()
     {
-        //
-        if (!Schema::hasTable('production_company_show_audition_role')) {
-       Schema::create('production_company_show_audition_role', function (Blueprint $table) {
+        Schema::create('production_company_show_audition_role', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('audition_id')->unsigned();
-            $table->foreign('audition_id')->references('id')->on('production_company_show_audtion');
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('audition_id')->references('id')->on('production_company_show_audition')->onDelete('cascade');
             $table->string('character_name');
             $table->string('character_ethnicity');
             $table->string('character_sex');
@@ -29,7 +25,6 @@ class CreateProductionCompanyShowAuditionRoleTable extends Migration
             $table->integer('audition_role_state');
             $table->timestamps();
         });
-   }
     }
 
     /**
@@ -39,7 +34,6 @@ class CreateProductionCompanyShowAuditionRoleTable extends Migration
      */
     public function down()
     {
-        //
         Schema::drop('production_company_show_audition_role');
     }
 }

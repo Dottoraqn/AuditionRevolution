@@ -8,17 +8,17 @@
         <link href="/css/jqueryui-editable.css" rel="stylesheet">
         @yield('head')
         @if (Helpers::setActive('messages'))
-        <link href="/css/app.css" rel="stylesheet" type="text/css">
-        <script src="/js/app.js"></script>
-        <script src="/js/routes.js"></script>
-        <script src="/js/angular.js"></script>
-        <script src="/js/jquery-1.11.3.min.js"></script>
+            <link href="/css/app.css" rel="stylesheet" type="text/css">
+            <script src="/js/app.js"></script>
+            <script src="/js/routes.js"></script>
+            <script src="/js/angular.js"></script>
+            <script src="/js/jquery-1.11.3.min.js"></script>
         @endif 
         @if (Helpers::setActive('/'))
-        <link href="/css/projectTable.css" rel="stylesheet">
+            <link href="/css/projectTable.css" rel="stylesheet">
         @endif 
         @if (Helpers::setActive('auditions'))
-        <link href="/css/projectTable.css" rel="stylesheet">
+            <link href="/css/projectTable.css" rel="stylesheet">
         @endif 
     </head>
     
@@ -30,7 +30,7 @@
      
      
     <body>      
-    @yield('content')
+        @yield('content')
 
     </body>
     @include('layouts.footer')

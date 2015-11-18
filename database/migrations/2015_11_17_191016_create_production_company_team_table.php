@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserAvatarTable extends Migration
+class CreateProductionCompanyTeamTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,13 @@ class CreateUserAvatarTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_avatar', function (Blueprint $table) {
+        Schema::create('production_company_team', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->string('file_name');
-            $table->string('thumbnail_url');
-            $table->string('original_url');
+            $table->integer('production_company_id')->unsigned();
+            $table->foreign('production_company_id')->references('id')->on('production_company');
+            $table->string('role');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateUserAvatarTable extends Migration
      */
     public function down()
     {
-        Schema::drop('user_avatar');
+        Schema::drop('production_company_team');
     }
 }

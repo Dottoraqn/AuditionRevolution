@@ -18,6 +18,12 @@ class ProductionShowAudition extends Model
    *
    * @var array
    */
-  protected $fillable = ['name', 'description', 'location'];
+  protected $fillable = ['name', 
+    'description',
+    'location',
+    'name',
+    'audition_date',
+    'audition_time'
+  ];
 
 }
