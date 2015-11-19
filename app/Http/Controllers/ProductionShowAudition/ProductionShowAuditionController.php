@@ -77,8 +77,8 @@ class ProductionShowAuditionController extends Controller
       $input['show_id'] = 1;
       ProductionShowAudition::create($input);
 
-        return $input;
-//      return redirect('home');
+//        return $input;
+      return redirect('home');
       
     
     }  
