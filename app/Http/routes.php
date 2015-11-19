@@ -36,6 +36,9 @@ Route::get('landing', function () {
 Route::get('messages', function () {
     return view('messages');
 });
+Route::get('reg2', function () {
+    return view('usertype');
+});
 
 Route::get('messages', [
     'middleware' => 'acl:manage_user',
