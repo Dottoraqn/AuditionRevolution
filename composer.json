@@ -9,6 +9,7 @@
         "laravel/framework": "5.1.*",
         "ext-mbstring": "*",
         "rap2hpoutre/laravel-log-viewer": "^0.4.3",
+        "doctrine/dbal": "~2.3",
         "illuminate/html": "^5.0"
     },
     "require-dev": {
