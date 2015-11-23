@@ -24,7 +24,11 @@ class ProductionShowAudition extends Model
     'audition_time',
     'organizer_id',
     'show_id',
-    'organizer_id'
   ];
+  
+  public function get_show()
+  {
+    return $this->belongsTo('App\ProductionShow');
+  }
 
 }

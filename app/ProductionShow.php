@@ -12,9 +12,28 @@ class ProductionShow extends Model
     'name',
     'description',
     'payment_type',
+    'location',
     'website',
     'union',
     'start_date',
-    'end_date'
+    'end_date',
+    'production_company_id'
   ];
+  
+  /**
+   *
+   * A Show is owned by a company
+   *
+   * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+   */
+  public function company()
+  {
+    return $this->belongsTo('App\ProductionCompany');
+  }
+  
+  public function auditions()
+  {
+    return $this->hasMany('App\ProductionShowAudition');
+  }
+  
 }

@@ -8,7 +8,7 @@
             <h3>Production Companies</h3>
 
             @foreach ($production_companies as $production_company)
-                <a href="{{ url('/production_companies', $production_company->id) }}"><h2>{{ $production_company->name }}</h2></a>
+                <a href="{{ url('/production_companies', $production_company->id) }}"><h2>{{ $production_company}}</h2></a>
                 <p>{{ $production_company->city }}</p>
             @endforeach
         </div>

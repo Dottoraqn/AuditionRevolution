@@ -10,23 +10,11 @@ use Request;
 
 class ProductionShowAuditionController extends Controller
 {
-
-  // Kevin's index method
-  // public function index() {
-  //     $auditions = DB::table('production_company_show_audition')->get();
-  //     return view('auditions.auditions', ['auditions' => $auditions]);
-  // }
-  
-  // Kevin's search by index method
-  // public function showAudition($id)
-  // {
-  //     return view('audition.audition', ['production_company_show_audition' => ProductionShowAudition::findOrFail($id)]);
-  // }
   
     public function index()
     {
-      $auditions = ProductionShowAudition::latest('created_at')->get();      
-      return view('home.index', compact('auditions'));
+      $auditions = ProductionShowAudition::latest('created_at')->get();            
+      return view('auditions.index', compact('auditions'));
     }  
     
     public function show($id)
@@ -38,15 +26,18 @@ class ProductionShowAuditionController extends Controller
       // $allAuditions = DB::table('user_auditions') ->where($user_id);
       
       $auditionById = ProductionShowAudition::find($id);
-      return view('home.show', compact('auditionById'));
+      return view('auditions.show', compact('auditionById'));
     }  
 
     protected function create()
     {
       //$shows = ProductionShowAudition::where('user_id', 2)->get();
-
-      $auditions = ProductionShowAudition::all();
-      return view('home.create', compact('auditions'));
+      // $company = \App\ProductionCompany::where('owner_id', $user)->get();
+      // $shows = \App\ProductionShow::where('production_show_id', $company)->get();
+      // 
+      // return view('home.createAudition', compact('shows'));
+       $auditions = ProductionShowAudition::all();
+       return view('auditions.create', compact('auditions'));
       
       // create([
       //     'name' => $data['name'],
@@ -72,15 +63,28 @@ class ProductionShowAuditionController extends Controller
   
     protected function store()
     {
+      $user = \Auth::id();
+      
       $input = Request::all();
-      $input['organizer_id'] = \Auth::id();
+      $input['organizer_id'] = $user;
       $input['show_id'] = 1;
       ProductionShowAudition::create($input);
 
 //        return $input;
-      return redirect('home');
-      
+      return redirect('auditions');
+
+    }  
     
+    protected function getAllShows()
+    {
+//       $user = \Auth::id();
+//       $company = \App\ProductionCompany::where('owner_id', $user)->first();
+// 
+//       $input = $company->shows;
+// 
+// //        return $input;
+//       return view('home.index', compact('input'));
+
     }  
 
     

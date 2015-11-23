@@ -29,4 +29,12 @@ class ProductionCompany extends Model
     return $this->belongsTo('App\User');
   }
 
+  /**
+   * user can have many production companies
+   * @return \Illuminate\Database\Eloquent\Relations\HasMany
+   */
+    public function get_shows()
+    {
+        return $this->hasMany('App\ProductionShow', 'production_company_id');
+    }
 }
