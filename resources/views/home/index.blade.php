@@ -12,8 +12,9 @@
 
 <section class="text">
   <div class="container projects"> 
-    <h3 style="text-align: center;">Create New Audition </h3>
+    <h3 style="text-align: center;">What Would You Like To Do?</h3>
     
+    @unless(Auth::user()->isAble('talent'))
     <div class="row">
       <div class="col-md-4">
         <div class="mybutton" style="text-align: center;">
@@ -30,6 +31,7 @@
           <button class="btn btn-default btn-lg" id="save" type="submit">Save Changes</button>
         </div>  
       </div>
+      @endunless
       <div class="col-md-12"> 
         <div class="panel panel-default">
           <div class="panel-body" id="auditions">      
