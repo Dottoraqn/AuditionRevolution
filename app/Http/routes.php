@@ -89,13 +89,16 @@ Route::post('production_shows', 'ProductionShowController@store');
 
 //Route::post('home', 'ProductionShowAudition\ProductionShowAuditionController@postQuickUpdate');
 
+
+/****** Production Company Routes ******/
 Route::get('production_companies', 'ProductionCompanyController@index');
 Route::get('production_companies/create', 'ProductionCompanyController@create');
 Route::get('production_companies/{id}', 'ProductionCompanyController@show');
 Route::post('production_companies', 'ProductionCompanyController@store');
 
-// Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+/****** Audition Role Routes ******/
+Route::get('audition_roles', 'AuditionRoleController@index');
+Route::get('audition_role/create', 'AuditionRoleController@create');
+Route::get('audition_roles/{id}', 'AuditionRoleController@show');
+Route::post('audition_roles', 'AuditionRoleController@store');
 
-// Route::get('user/profile', [
-//     'as' => 'profile', 'uses' => 'UserController@showProfile'
-// ]);
