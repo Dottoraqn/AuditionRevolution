@@ -88,7 +88,11 @@ Route::get('production_shows/{id}', 'ProductionShowController@show');
 Route::post('production_shows', 'ProductionShowController@store');
 
 //Route::post('home', 'ProductionShowAudition\ProductionShowAuditionController@postQuickUpdate');
-
+//Production Company Team routes
+Route::get('production_team', 'ProductionCompanyTeamController@index');
+Route::get('production_team/create', 'ProductionCompanyTeamController@create');
+Route::get('production_team/{id}', 'ProductionCompanyTeamController@show');
+Route::post('production_team', 'ProductionCompanyTeamController@store');
 
 /****** Production Company Routes ******/
 Route::get('production_companies', 'ProductionCompanyController@index');
@@ -101,4 +105,3 @@ Route::get('audition_roles', 'AuditionRoleController@index');
 Route::get('audition_role/create', 'AuditionRoleController@create');
 Route::get('audition_roles/{id}', 'AuditionRoleController@show');
 Route::post('audition_roles', 'AuditionRoleController@store');
-
