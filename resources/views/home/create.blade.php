@@ -2,9 +2,9 @@
 @section('title', 'Shows');
 
 @section('content')
-    @if(Auth::user()->isAble('admin'))
+    @unless(Auth::user()->isAble('talent'))
         <h3>Hello</h3>
-    @endif
+    @endunless
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
