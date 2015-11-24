@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\ProductionShowAudition;
 
 use App\ProductionShowAudition;
+use App\ProductionCompanyTeam;
 use DB;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
@@ -13,8 +14,24 @@ class ProductionShowAuditionController extends Controller
   
     public function index()
     {
-      $auditions = ProductionShowAudition::latest('created_at')->get();            
-      return view('auditions.index', compact('auditions'));
+      $user = \Auth::id();
+      $company_group = \App\ProductionCompanyTeam::where('user_id', $user)->first();
+      $company_id = $company_group->production_company_id;
+      
+      $company = \App\ProductionCompany::where('id', $company_id)->first();
+      $shows = $company->get_shows;
+      //die(json_encode($shows));
+      $auditions = array();
+      foreach ($shows as $show) {
+        $audition = ProductionShowAudition::where('show_id',$show->id)->get();  
+        foreach ($audition as $a) {
+          $auditions[$a->id] = $a;
+        }
+      } 
+      //die(json_encode($auditions));
+      //$auditions = ProductionShowAudition::latest('created_at')->where()->get();  
+                
+      return view('auditions.index')->with('auditions', $auditions);
     }  
     
     public function show($id)

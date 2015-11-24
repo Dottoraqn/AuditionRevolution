@@ -45,7 +45,6 @@ class ProductionCompanyTeamController extends Controller
       $company = \App\ProductionCompany::where('owner_id', $user)->first();
 
       $input = $request->all();
-      $input['user_id'] = $user;
       $input['production_company_id'] = $company->id;
 
       ProductionCompanyTeam::create($input);

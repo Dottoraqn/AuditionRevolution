@@ -18,7 +18,20 @@ class MainController extends Controller
      */
     public function index()
     {
-      $auditions = ProductionShowAudition::latest('created_at')->get();;
+      $user = \Auth::id();
+      $company_group = \App\ProductionCompanyTeam::where('user_id', $user)->first();
+      $company_id = $company_group->production_company_id;
+      
+      $company = \App\ProductionCompany::where('id', $company_id)->first();
+      $shows = $company->get_shows;
+      //die(json_encode($shows));
+      $auditions = array();
+      foreach ($shows as $show) {
+        $audition = ProductionShowAudition::where('show_id',$show->id)->get();  
+        foreach ($audition as $a) {
+          $auditions[$a->id] = $a;
+        }
+      } 
       return view('home.index', compact('auditions'));
     }
 

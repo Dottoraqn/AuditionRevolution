@@ -48,6 +48,8 @@
                 </div>
                 <div id="collapse{{$audition->id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{$audition->id}}">
                   <div class="panel-body">
+                    {{$audition->show_id}} <br>
+                    {{$audition->organizer_id}} <br>
                     Date: <a class="editable-click editable-disabled" href="javascript:;" data-type="text" data-placement="right" 
                       class="pUpdate" id="date{{$audition->date}}" data-pk="{{$audition->id}}">{{$audition->audition_date}}</a>
                     <br>
