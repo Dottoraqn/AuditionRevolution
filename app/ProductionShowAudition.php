@@ -20,11 +20,15 @@ class ProductionShowAudition extends Model
    */
   protected $fillable = ['name', 
     'description',
-    'location',
     'audition_date',
     'audition_time',
     'organizer_id',
-    'show_id'
+    'show_id',
   ];
+  
+  public function get_show()
+  {
+    return $this->belongsTo('App\ProductionShow');
+  }
 
 }

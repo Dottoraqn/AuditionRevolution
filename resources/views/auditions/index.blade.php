@@ -12,26 +12,26 @@
 
 <section class="text">
   <div class="container projects"> 
-    <h3 style="text-align: center;">What Would You Like To Do?</h3>
-    
-    @unless(Auth::user()->isAble('talent'))
+    <h3> Your Active Auditions </h3>
+
     <div class="row">
       <div class="col-md-4">
-        <div class="mybutton" style="text-align: center;">
-          <button class="btn btn-default btn-lg" type="button" onclick="window.location.href='/production_shows/create'">Create a Show</button>
+        <div class="mybutton">
+          <button class="btn btn-default btn-lg" type="button" id="createShow" data-toggle="modal" data-target=".show-modal-lg">Create a Show</button>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="mybutton" style="text-align: center;">
-          <button class="btn btn-default btn-lg" type="button" onclick="window.location.href='/home/create'">Create an Audition</button>
+        <div class="mybutton">
+          <button class="btn btn-default btn-lg" type="button" id="createAudition" data-toggle="modal" data-target=".audition-modal-lg">Create an Audition</button>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="mybutton" style="text-align: center;">
+        <div class="mybutton">
           <button class="btn btn-default btn-lg" id="save" type="submit">Save Changes</button>
         </div>  
       </div>
-      @endunless
+      <br>
+      <br>
       <div class="col-md-12"> 
         <div class="panel panel-default">
           <div class="panel-body" id="auditions">      
@@ -68,8 +68,7 @@
         </div>
       </div>
     </div>
-
-</div>
+  </div>
 </section>
 
 @else
@@ -81,3 +80,5 @@
   </div>
 @endif
 @endsection
+
+@include('auditions.create')

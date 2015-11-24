@@ -68,21 +68,37 @@ Route::get('profile', ['middleware' => 'auth', function() {
 Route::get('user/{id}', 'User\UserController@showProfile');
 
 
-// project page routes
-Route::get('/', 'ProductionShowAudition\ProductionShowAuditionController@index');
-Route::get('home', 'ProductionShowAudition\ProductionShowAuditionController@index');
-Route::get('home/create', 'ProductionShowAudition\ProductionShowAuditionController@create');
-Route::get('home/{id}', 'ProductionShowAudition\ProductionShowAuditionController@show');
-Route::post('home', 'ProductionShowAudition\ProductionShowAuditionController@store');
+Route::get('/', 'MainController@index');
+Route::get('home', 'MainController@index');
+Route::get('home/create', 'MainController@create');
+Route::get('home/{id}', 'MainController@show');
+Route::post('home', 'MainController@store');
+
+// auditions page routes
+Route::get('auditions', 'ProductionShowAudition\ProductionShowAuditionController@index');
+Route::get('auditions/create', 'ProductionShowAudition\ProductionShowAuditionController@create');
+Route::get('auditions/{id}', 'ProductionShowAudition\ProductionShowAuditionController@show');
+Route::post('auditions', 'ProductionShowAudition\ProductionShowAuditionController@store');
+// Route::get('home', 'ProductionShowAudition\ProductionShowAuditionController@getAllShows');
+
+// starting a show
+Route::get('production_shows', 'ProductionShowController@index');
+Route::get('production_shows/create', 'ProductionShowController@create');
+Route::get('production_shows/{id}', 'ProductionShowController@show');
+Route::post('production_shows', 'ProductionShowController@store');
+
 //Route::post('home', 'ProductionShowAudition\ProductionShowAuditionController@postQuickUpdate');
 
+
+/****** Production Company Routes ******/
 Route::get('production_companies', 'ProductionCompanyController@index');
 Route::get('production_companies/create', 'ProductionCompanyController@create');
 Route::get('production_companies/{id}', 'ProductionCompanyController@show');
 Route::post('production_companies', 'ProductionCompanyController@store');
 
-// Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+/****** Audition Role Routes ******/
+Route::get('audition_roles', 'AuditionRoleController@index');
+Route::get('audition_role/create', 'AuditionRoleController@create');
+Route::get('audition_roles/{id}', 'AuditionRoleController@show');
+Route::post('audition_roles', 'AuditionRoleController@store');
 
-// Route::get('user/profile', [
-//     'as' => 'profile', 'uses' => 'UserController@showProfile'
-// ]);
