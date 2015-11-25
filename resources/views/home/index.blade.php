@@ -33,7 +33,7 @@
       </div>
       @endunless
       @if(isset($auditions) && $auditions != '' )
-      <div class="col-md-12"> 
+      <div class="col-md-12">
         <div class="panel panel-default">
           <div class="panel-body" id="auditions">      
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -46,6 +46,7 @@
                       Open {{$audition->name}} Details
                     </a>
                     <a onclick="clickEnable({{$audition->id}})" href="javascript:;" value="true" id="{{$audition->id}}" style="float: right;">Edit</a>
+                    <a href="production_shows/{{$audition->show_id}}" value="true" id="show_{{$audition->id}}" style="float: right;">View Show</a>
                   </h4>
                 </div>
                 <div id="collapse{{$audition->id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{$audition->id}}">

@@ -81,6 +81,10 @@ class ProductionShowController extends Controller
     {
       $shows = ProductionShow::findOrFail($id);
 
+      $production_company = $shows['production_company_id'];
+      $company = \App\ProductionCompany::where( 'id', $production_company )->first();
+      array_add($shows, 'company', $company);
+
       return view('production_show.show', compact('shows'));
     }
 
