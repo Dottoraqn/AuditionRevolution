@@ -28,7 +28,7 @@
       </div>
       <div class="col-md-4">
         <div class="mybutton" style="text-align: center;">
-          <button class="btn btn-default btn-lg" id="save" type="submit">Save Changes</button>
+          <button class="btn btn-default btn-lg" id="save" type="submit">Start Audition Assistant</button>
         </div>  
       </div>
       @endunless
@@ -50,16 +50,18 @@
                 </div>
                 <div id="collapse{{$audition->id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{$audition->id}}">
                   <div class="panel-body">
-
+                    Show: {{$audition->show}} <br>
                     Date: <a class="editable-click editable-disabled" href="javascript:;" data-type="text" data-placement="right" 
                       class="pUpdate" id="date{{$audition->date}}" data-pk="{{$audition->id}}">{{$audition->audition_date}}</a>
                     <br>
                     Time: <a class="editable-click editable-disabled" href="javascript:;" data-type="text" data-placement="right" 
-                      class="pUpdate" id="date{{$audition->date}}" data-pk="{{$audition->id}}">{{$audition->audition_date}}</a>
+                      class="pUpdate" id="date{{$audition->date}}" data-pk="{{$audition->id}}">{{$audition->audition_time}}</a>
                     <br>
-                    Collaborators:  
-                    
-                    <br>
+                    Owners: {{$audition->owner_name}} <br>
+                    Collaborators: 
+                    @foreach($audition->collaborators as $collab)
+                      {{$collab}}, 
+                    @endforeach <br>
                     Roles Available: <br>
 
                   </div>

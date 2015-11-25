@@ -24,21 +24,31 @@ class MainController extends Controller
         if( $company_group ) {
           $company_id = $company_group->production_company_id;
           
+          $collaborators = \App\ProductionCompanyTeam::where('production_company_id', $company_id)->get();
+          $people = array();
+          foreach ($collaborators as $c) {
+            $name = \App\User::where('id', $c->user_id)->first();
+            $people[$c->user_id] = $name->username;
+          }
+
           $company = \App\ProductionCompany::where('id', $company_id)->first();
           $shows = $company->get_shows;
+          
+          $comp_name = $company->name;
+          $comp_owner_id = $company->owner_id;
+          $comp_owner = \App\User::where('id', $comp_owner_id)->first();
+          $comp_owner_name = $comp_owner->username;
           
           $auditions = array();
           foreach ($shows as $show) {
             $audition = ProductionShowAudition::where('show_id',$show->id)->get();  
             foreach ($audition as $a) {
               $auditions[$a->id] = $a;
+              $a["show"] = $show->name;
+              $a["owner_name"] = $comp_owner_name;
+              $a["collaborators"] = $people;
             }
           } 
-          
-          $comp_name = $company->name;
-          $comp_owner_id = $company->owner_id;
-          $comp_owner = \App\User::where('id', $comp_owner_id)->first();
-          $comp_owner_name = $comp_owner->username;
           
           // $auditions["company"] = $comp_name;
           // $auditions["owner"] = $comp_owner_name;        
