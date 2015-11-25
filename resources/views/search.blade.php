@@ -3,6 +3,7 @@
 @section('title', 'Search Auditions')
 
 @section('content')
+  <?php echo $auditions; ?>
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
@@ -103,11 +104,12 @@
     </div>
   </div>
   <div class="row" id="audition-results">
+    @foreach($auditions as $audition)
     <div class="audition-card col-lg-12">
       <div class="row">
         <div class="panel panel-default project-search">
           <div class="panel-heading project-search-heading">
-            <h3 class="panel-title">Wicked</h3>
+            <h3 class="panel-title">{{ $audition->name }}</h3>
           </div>
           <div class="panel-body">
             <div class="row">
@@ -138,73 +140,7 @@
         </div>
       </div>
     </div>
-    <div class="audition-card col-lg-12">
-      <div class="row">
-        <div class="panel panel-default project-search">
-          <div class="panel-heading project-search-heading">
-            <h3 class="panel-title">West Side Story</h3>
-          </div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <p><strong>Roles:</strong></p>
-                    <p><strong>Little John:</strong> Male</p>
-                    <p><strong>Maria:</strong> Female</p>
-                    <p><strong>The Jets:</strong> Male</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <p><strong>Company:</strong> Dreamworks</p>
-                    <p><strong>Location:</strong> Orlanda, FL</p>
-                    <p><strong>Union:</strong> None</p>
-                    <p><strong>Payment:</strong> Salaried</p>
-                    <button type="button" class="btn btn-primary pull-right">Quick Apply</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="audition-card col-lg-12">
-      <div class="row">
-        <div class="panel panel-default project-search">
-          <div class="panel-heading project-search-heading">
-            <h3 class="panel-title">Hamlet</h3>
-          </div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <p><strong>Roles:</strong></p>
-                    <p><strong>Hamlet:</strong> Male</p>
-                    <p><strong>Ghost:</strong> Any</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <p><strong>Company:</strong> Warner Brothers</p>
-                    <p><strong>Location:</strong> Atlanta, GA</p>
-                    <p><strong>Union:</strong> None</p>
-                    <p><strong>Payment:</strong> Contract</p>
-                    <button type="button" class="btn btn-primary pull-right">Quick Apply</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      @endforeach
   </div>
 </div>
               

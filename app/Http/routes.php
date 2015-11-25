@@ -26,9 +26,6 @@ Route::get('layouts', function () {
 Route::get('profiles', function () {
     return view('profiles');
 });
-Route::get('search', function () {
-    return view('search');
-});
 Route::get('about', 'PagesController@about');
 Route::get('landing', function () {
     return view('landing');
@@ -75,6 +72,7 @@ Route::get('home/{id}', 'MainController@show');
 Route::post('home', 'MainController@store');
 
 // auditions page routes
+Route::get('search', 'ProductionShowAudition\ProductionShowAuditionController@search');
 Route::get('auditions', 'ProductionShowAudition\ProductionShowAuditionController@index');
 Route::get('auditions/create', 'ProductionShowAudition\ProductionShowAuditionController@create');
 Route::get('auditions/{id}', 'ProductionShowAudition\ProductionShowAuditionController@show');

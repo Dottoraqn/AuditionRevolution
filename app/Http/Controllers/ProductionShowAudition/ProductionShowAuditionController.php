@@ -90,7 +90,20 @@ class ProductionShowAuditionController extends Controller
 //        return $input;
       return redirect('auditions');
 
-    }  
+    }
+
+    protected function search()
+    {
+      $auditions = ProductionShowAudition::all();
+      foreach( $auditions as $audition ) {
+        $show_id = $audition['show_id'];
+        $show = \App\ProductionShow::where('id', $show_id)->first();
+        array_add($audition, "audition_show", $show );
+        $company = \App\ProductionCompany::where('id', $show['production_company_id'] )->first();
+        array_add($audition, "audition_company", $company );
+      }
+      return view('search', compact('auditions'));
+    }
     
     protected function getAllShows()
     {
