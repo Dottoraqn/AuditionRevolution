@@ -2,9 +2,6 @@
 @section('title', 'Shows');
 
 @section('content')
-    @if(Auth::user()->isAble('admin'))
-        <h3>Hello</h3>
-    @endif
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
