@@ -1,10 +1,7 @@
 @extends('layouts.master')
-@section('title', 'Shows');
+@section('title', 'Shows')
 
 @section('content')
-    @unless(Auth::user()->isAble('talent'))
-        <h3>Hello</h3>
-    @endunless
 <div class="container">
     <div class="row">
         <div class="col-sm-12">

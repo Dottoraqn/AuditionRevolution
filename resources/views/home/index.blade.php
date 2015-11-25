@@ -70,6 +70,14 @@
           </div>
         </div>
       </div>
+        @else
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-body" id="auditions">
+              <p>No current auditions.</p>
+            </div>
+          </div>
+        </div>
       @endif
     </div>
 
