@@ -37,11 +37,12 @@
         <div class="panel panel-default">
           <div class="panel-body" id="auditions">      
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
               @foreach($auditions as $audition)
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="heading{{$audition->id}}">
                   <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{$audition->id}}" aria-expanded="false" aria-controls="collapse{{$audition->id}}">
+                    <a role="button" data-toggle="collapse" data-parent="heading{{$audition->id}}" href="#collapse{{$audition->id}}" aria-expanded="true" aria-controls="collapse{{$audition->id}}">
                       Open {{$audition->name}} Details
                     </a>
                     <a onclick="clickEnable({{$audition->id}})" href="javascript:;" value="true" id="{{$audition->id}}" style="float: right;">Edit</a>
@@ -49,8 +50,7 @@
                 </div>
                 <div id="collapse{{$audition->id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{$audition->id}}">
                   <div class="panel-body">
-                    {{$audition->show_id}} <br>
-                    {{$audition->organizer_id}} <br>
+
                     Date: <a class="editable-click editable-disabled" href="javascript:;" data-type="text" data-placement="right" 
                       class="pUpdate" id="date{{$audition->date}}" data-pk="{{$audition->id}}">{{$audition->audition_date}}</a>
                     <br>

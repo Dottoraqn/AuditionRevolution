@@ -26,7 +26,7 @@ class MainController extends Controller
           
           $company = \App\ProductionCompany::where('id', $company_id)->first();
           $shows = $company->get_shows;
-          //die(json_encode($shows));
+          
           $auditions = array();
           foreach ($shows as $show) {
             $audition = ProductionShowAudition::where('show_id',$show->id)->get();  
@@ -34,6 +34,17 @@ class MainController extends Controller
               $auditions[$a->id] = $a;
             }
           } 
+          
+          $comp_name = $company->name;
+          $comp_owner_id = $company->owner_id;
+          $comp_owner = \App\User::where('id', $comp_owner_id)->first();
+          $comp_owner_name = $comp_owner->username;
+          
+          // $auditions["company"] = $comp_name;
+          // $auditions["owner"] = $comp_owner_name;        
+
+          //array_push($auditions, $comp_name, $comp_owner_name);
+          //die(json_encode($auditions));
           return view('home.index', compact('auditions'));
         }
         else {
