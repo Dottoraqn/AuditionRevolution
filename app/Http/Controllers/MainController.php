@@ -19,20 +19,30 @@ class MainController extends Controller
     public function index()
     {
       $user = \Auth::id();
-      $company_group = \App\ProductionCompanyTeam::where('user_id', $user)->first();
-      $company_id = $company_group->production_company_id;
-      
-      $company = \App\ProductionCompany::where('id', $company_id)->first();
-      $shows = $company->get_shows;
-      //die(json_encode($shows));
-      $auditions = array();
-      foreach ($shows as $show) {
-        $audition = ProductionShowAudition::where('show_id',$show->id)->get();  
-        foreach ($audition as $a) {
-          $auditions[$a->id] = $a;
+      if( $user ) {
+        $company_group = \App\ProductionCompanyTeam::where('user_id', $user)->first();
+        if( $company_group ) {
+          $company_id = $company_group->production_company_id;
+          
+          $company = \App\ProductionCompany::where('id', $company_id)->first();
+          $shows = $company->get_shows;
+          //die(json_encode($shows));
+          $auditions = array();
+          foreach ($shows as $show) {
+            $audition = ProductionShowAudition::where('show_id',$show->id)->get();  
+            foreach ($audition as $a) {
+              $auditions[$a->id] = $a;
+            }
+          } 
+          return view('home.index', compact('auditions'));
+        }
+        else {
+          return view('home.index');
         }
       } 
-      return view('home.index', compact('auditions'));
+      else {
+        return view('home.index');
+      }
     }
 
     /**

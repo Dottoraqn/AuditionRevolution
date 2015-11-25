@@ -32,6 +32,7 @@
         </div>  
       </div>
       @endunless
+      @if(isset($auditions) && $auditions != '' )
       <div class="col-md-12"> 
         <div class="panel panel-default">
           <div class="panel-body" id="auditions">      
@@ -69,6 +70,7 @@
           </div>
         </div>
       </div>
+      @endif
     </div>
 
 </div>
