@@ -94,15 +94,18 @@ class ProductionShowAuditionController extends Controller
 
     protected function search()
     {
-      $auditions = ProductionShowAudition::all();
-      foreach( $auditions as $audition ) {
-        $show_id = $audition['show_id'];
-        $show = \App\ProductionShow::where('id', $show_id)->first();
-        array_add($audition, "audition_show", $show );
-        $company = \App\ProductionCompany::where('id', $show['production_company_id'] )->first();
-        array_add($audition, "audition_company", $company );
+      $shows = \App\ProductionShow::all();
+      foreach( $shows as $show ) {
+        $company = \App\ProductionCompany::where('id', $show['production_company_id'])->first();
+        $auditions = ProductionShowAudition::where('show_id', $show['id'])->get();
+        foreach( $auditions as $audition ) {
+          $roles = \App\ProductionShowAuditionRole::where('audition_id', $audition['id']);
+          array_add($audition, 'audition_roles', $roles );
+        }
+        array_add($show, 'show_company', $company);
+        array_add($show, 'auditions', $auditions );
       }
-      return view('search', compact('auditions'));
+      return view('search', compact('shows'));
     }
     
     protected function getAllShows()
