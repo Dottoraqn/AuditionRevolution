@@ -45,8 +45,8 @@
                     <a role="button" data-toggle="collapse" data-parent="heading{{$audition->id}}" href="#collapse{{$audition->id}}" aria-expanded="true" aria-controls="collapse{{$audition->id}}">
                       Open {{$audition->name}} Details
                     </a>
-                    <a onclick="clickEnable({{$audition->id}})" href="javascript:;" value="true" id="{{$audition->id}}" style="float: right;">Edit</a>
-                    <a href="production_shows/{{$audition->show_id}}" value="true" id="show_{{$audition->id}}" style="float: right;">View Show</a>
+                    <a onclick="clickEnable({{$audition->id}})" href="javascript:;" value="true" id="{{$audition->id}}" style="float: right;"> Edit</a>
+                    <a href="production_shows/{{$audition->show_id}}" value="true" id="show_{{$audition->id}}" style="float: right;">View Show | </a>
                   </h4>
                 </div>
                 <div id="collapse{{$audition->id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{$audition->id}}">
