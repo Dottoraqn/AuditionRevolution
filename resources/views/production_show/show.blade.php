@@ -3,7 +3,7 @@
 
 @section('content')
     <?php //echo $shows; ?>
-    <header class="business-header">
+    <header class="business-header" style="background:url('{{$shows->show_banner_url}}')center center no-repeat scroll; -webkit-background-size:cover; -moz-background-size:cover; background-size:cover; -o-background-size:cover;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -15,9 +15,7 @@
 
     <!-- Page Content -->
     <div class="container">
-
         <hr>
-
         <div class="row">
             <div class="col-sm-8">
               <div class="row">
