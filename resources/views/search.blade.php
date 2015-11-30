@@ -142,7 +142,7 @@
               </div>
             </div>
           </div>
-          <div class="panel-footer">
+          <div class="panel-footer audition-panel-footer">
             <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#projectModal_{{$show->id}}">Quick Apply</button>
             <a href="/production_shows/{{$show->id}}" type="button" class="btn btn-primary">More Information</a>

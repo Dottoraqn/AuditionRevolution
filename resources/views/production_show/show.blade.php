@@ -31,9 +31,9 @@
                     </div>
                     <div class="col-sm-4">
                       <p><strong>Start Date:</strong></p>
-                      <p>{{$shows->start_date}}</p>
+                      <p>{{$shows->formatted_start_date}}</p>
                       <p><strong>End Date:</strong></p>
-                      <p>{{$shows->end_date}}</p>
+                      <p>{{$shows->formatted_end_date}}</p>
                     </div>
                     <div class="col-sm-4">
                       <p><strong>Payment:</strong> {{$shows->payment_type}}</p>
