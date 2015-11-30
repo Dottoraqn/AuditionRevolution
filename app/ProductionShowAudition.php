@@ -30,5 +30,9 @@ class ProductionShowAudition extends Model
   {
     return $this->belongsTo('App\ProductionShow');
   }
+  public function get_roles()
+  {
+    return $this->hasMany('App\ProductionShowAuditionRole');
+  }
 
 }

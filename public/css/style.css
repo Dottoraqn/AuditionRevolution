@@ -389,3 +389,36 @@ OTHER STUFF
   position: relative;
   padding: .5%;
 }
+
+/* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
+
+.business-header {
+    height: 400px;
+    background: url('http://placehold.it/1920x400') center center no-repeat scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+/* Customize the text color and shadow color and to optimize text legibility. */
+
+.business-tagline{
+    /*text-shadow: 0 0 10px #000;*/
+    color: #fff;
+}
+
+.img-center {
+    margin: 0 auto;
+}
+
+.role-panels {
+  height:300px;
+  /*border-top:1px solid rgba(128, 128, 128, 0.19);*/
+  padding:10px;
+  box-shadow:7px 11px 5px -9px rgba(0,0,0,0.44);
+}
+.role-apply {
+  position: absolute;
+  bottom:10;
+}

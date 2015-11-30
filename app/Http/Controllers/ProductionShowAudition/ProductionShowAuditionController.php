@@ -99,7 +99,9 @@ class ProductionShowAuditionController extends Controller
         $company = \App\ProductionCompany::where('id', $show['production_company_id'])->first();
         $auditions = ProductionShowAudition::where('show_id', $show['id'])->get();
         foreach( $auditions as $audition ) {
-          $roles = \App\ProductionShowAuditionRole::where('audition_id', $audition['id']);
+          // die(json_encode($audition['id']));
+          $roles = \App\ProductionShowAuditionRole::where('audition_id', $audition['id'])->get();
+          // die(json_encode($roles));
           array_add($audition, 'audition_roles', $roles );
         }
         array_add($show, 'show_company', $company);

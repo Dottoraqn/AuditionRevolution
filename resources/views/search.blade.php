@@ -3,7 +3,7 @@
 @section('title', 'Search Auditions')
 
 @section('content')
-  <?php echo $shows; ?>
+  <?php //echo $shows; ?>
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
@@ -116,11 +116,11 @@
               <div class="col-sm-6">
                 <div class="row">
                   <div class="col-sm-12">
-                    <p><strong>Roles:</strong></p>
+                    <h4><strong>Roles:</strong></h4>
                     @foreach( $show->auditions as $audition )
-                    @foreach( $audition->audition_roles as $role )
-                      <p><strong>$role->name</strong></p>
-                    @endforeach
+                      @foreach( $audition->audition_roles as $role )
+                        <p><strong>{{ $role->character_name }}</strong> {{ $role->character_sex }}, {{ $role->character_ethnicity }}, {{ $role->character_age }}</p>
+                      @endforeach
                     @endforeach
                     {{--<p><strong>Wicked Witch:</strong> Female</p>--}}
                     {{--<p><strong>Good Witch:</strong> Female</p>--}}
@@ -131,21 +131,51 @@
               <div class="col-sm-6">
                 <div class="row">
                   <div class="col-sm-12">
+                    <h4><strong>Information:</strong></h4>
+                    <p><strong>Description: </strong>{{$show->description}}</p>
                     <p><strong>Company: </strong>{{ $show->show_company->name }}</p>
                     <p><strong>Location: </strong>{{ $show->show_company->city }}, {{ $show->show_company->state }}</p>
                     <p><strong>Union: </strong>{{ $show->union }}</p>
                     <p><strong>Payment: </strong>{{ $show->payment_type }}</p>
-                    <button type="button" class="btn btn-primary pull-right">Quick Apply</button>
-                    <a href="/projects/dashboard" type="button" class="btn btn-primary pull-right">More Information</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <div class="panel-footer">
+            <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#projectModal_{{$show->id}}">Quick Apply</button>
+            <a href="/production_shows/{{$show->id}}" type="button" class="btn btn-primary">More Information</a>
+          </div>
         </div>
       </div>
     </div>
-      @endforeach
+    <div class="modal fade" id="projectModal_{{$show->id}}" tabindex="-1" role="dialog" aria-labelledby="projectModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">{{ $show->name }}</h4>
+          </div>
+          <div class="modal-body">
+            <h4>Apply for Role:</h4>
+            <select class="form-control">
+              <option>Select Role</option>
+              @foreach( $show->auditions as $audition )
+                @foreach( $audition->audition_roles as $role )
+                  <option value="{{$role->id}}">{{$role->character_name}}</option>
+                @endforeach
+              @endforeach
+            </select>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Apply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    @endforeach
   </div>
 </div>
               
