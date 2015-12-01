@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\ProductionShowAudition;
 
 use App\ProductionShowAudition;
+use App\ProductionCompanyTeam;
 use DB;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
@@ -13,8 +14,24 @@ class ProductionShowAuditionController extends Controller
   
     public function index()
     {
-      $auditions = ProductionShowAudition::latest('created_at')->get();            
-      return view('auditions.index', compact('auditions'));
+      $user = \Auth::id();
+      $company_group = \App\ProductionCompanyTeam::where('user_id', $user)->first();
+      $company_id = $company_group->production_company_id;
+      
+      $company = \App\ProductionCompany::where('id', $company_id)->first();
+      $shows = $company->get_shows;
+      //die(json_encode($shows));
+      $auditions = array();
+      foreach ($shows as $show) {
+        $audition = ProductionShowAudition::where('show_id',$show->id)->get();  
+        foreach ($audition as $a) {
+          $auditions[$a->id] = $a;
+        }
+      } 
+      //die(json_encode($auditions));
+      //$auditions = ProductionShowAudition::latest('created_at')->where()->get();  
+                
+      return view('auditions.index')->with('auditions', $auditions);
     }  
     
     public function show($id)
@@ -73,7 +90,25 @@ class ProductionShowAuditionController extends Controller
 //        return $input;
       return redirect('auditions');
 
-    }  
+    }
+
+    protected function search()
+    {
+      $shows = \App\ProductionShow::all();
+      foreach( $shows as $show ) {
+        $company = \App\ProductionCompany::where('id', $show['production_company_id'])->first();
+        $auditions = ProductionShowAudition::where('show_id', $show['id'])->get();
+        foreach( $auditions as $audition ) {
+          // die(json_encode($audition['id']));
+          $roles = \App\ProductionShowAuditionRole::where('audition_id', $audition['id'])->get();
+          // die(json_encode($roles));
+          array_add($audition, 'audition_roles', $roles );
+        }
+        array_add($show, 'show_company', $company);
+        array_add($show, 'auditions', $auditions );
+      }
+      return view('search', compact('shows'));
+    }
     
     protected function getAllShows()
     {

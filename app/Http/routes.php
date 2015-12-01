@@ -26,25 +26,22 @@ Route::get('layouts', function () {
 Route::get('profiles', function () {
     return view('profiles');
 });
-Route::get('search', function () {
-    return view('search');
-});
 Route::get('about', 'PagesController@about');
 Route::get('landing', function () {
     return view('landing');
 });
-Route::get('messages', function () {
-    return view('messages');
-});
+// Route::get('messages', function () {
+//     return view('messages');
+// });
 Route::get('reg2', function () {
     return view('usertype');
 });
 
-Route::get('messages', [
-    'middleware' => 'acl:manage_user',
-    'as' => 'users.admin',
-    'uses' => 'UserController@index'
-]);
+// Route::get('messages', [
+//     'middleware' => 'acl:manage_user',
+//     'as' => 'users.admin',
+//     'uses' => 'UserController@index'
+// ]);
 
 Route::get('projects/dashboard', function() {
     return view('projects/dashboard');
@@ -74,7 +71,10 @@ Route::get('home/create', 'MainController@create');
 Route::get('home/{id}', 'MainController@show');
 Route::post('home', 'MainController@store');
 
+Route::get('messages', 'MessagesController@index');
+
 // auditions page routes
+Route::get('search', 'ProductionShowAudition\ProductionShowAuditionController@search');
 Route::get('auditions', 'ProductionShowAudition\ProductionShowAuditionController@index');
 Route::get('auditions/create', 'ProductionShowAudition\ProductionShowAuditionController@create');
 Route::get('auditions/{id}', 'ProductionShowAudition\ProductionShowAuditionController@show');
@@ -88,7 +88,11 @@ Route::get('production_shows/{id}', 'ProductionShowController@show');
 Route::post('production_shows', 'ProductionShowController@store');
 
 //Route::post('home', 'ProductionShowAudition\ProductionShowAuditionController@postQuickUpdate');
-
+//Production Company Team routes
+Route::get('production_team', 'ProductionCompanyTeamController@index');
+Route::get('production_team/create', 'ProductionCompanyTeamController@create');
+Route::get('production_team/{id}', 'ProductionCompanyTeamController@show');
+Route::post('production_team', 'ProductionCompanyTeamController@store');
 
 /****** Production Company Routes ******/
 Route::get('production_companies', 'ProductionCompanyController@index');
@@ -101,4 +105,3 @@ Route::get('audition_roles', 'AuditionRoleController@index');
 Route::get('audition_role/create', 'AuditionRoleController@create');
 Route::get('audition_roles/{id}', 'AuditionRoleController@show');
 Route::post('audition_roles', 'AuditionRoleController@store');
-

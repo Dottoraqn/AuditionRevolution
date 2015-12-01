@@ -81,6 +81,24 @@ class ProductionShowController extends Controller
     {
       $shows = ProductionShow::findOrFail($id);
 
+      $production_company = $shows['production_company_id'];
+      $company = \App\ProductionCompany::where( 'id', $production_company )->first();
+      $auditions = \App\ProductionShowAudition::where('show_id', $shows['id'])->get();
+      $start_day = strtotime($shows['start_date']);
+      $start_date = date( 'F j, Y', $start_day );
+      $shows['formatted_start_date'] = $start_date;
+      $end_day = strtotime($shows['end_date']);
+      $end_date = date( 'F j, Y', $end_day );
+      $shows['formatted_end_date'] = $end_date;
+      foreach( $auditions as $audition ) {
+        // die(json_encode($audition['id']));
+        $roles = \App\ProductionShowAuditionRole::where('audition_id', $audition['id'])->get();
+        // die(json_encode($roles));
+        array_add($audition, 'audition_roles', $roles );
+      }
+      array_add($shows, 'company', $company);
+      array_add($shows, 'auditions', $auditions );
+
       return view('production_show.show', compact('shows'));
     }
 

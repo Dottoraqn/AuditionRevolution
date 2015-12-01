@@ -3,13 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\ProductionShowAudition;
+use App\Messages;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CreateProductionShowAuditionRequest;
 
-class MainController extends Controller
+class MessagesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,49 +19,23 @@ class MainController extends Controller
     {
       $user = \Auth::id();
       if( $user ) {
-        $company_group = \App\ProductionCompanyTeam::where('user_id', $user)->first();
-        if( $company_group ) {
-          $company_id = $company_group->production_company_id;
-          
-          $collaborators = \App\ProductionCompanyTeam::where('production_company_id', $company_id)->get();
-          $people = array();
-          foreach ($collaborators as $c) {
-            $name = \App\User::where('id', $c->user_id)->first();
-            $people[$c->user_id] = $name->username;
+        $all_messages = \App\Message::where('receiving_id', $user)->get();
+        foreach($all_messages as $message ){
+          $sender_id = $message['sender_id'];
+          // die(json_encode($sender_id));
+          $sender_user = \App\User::where('id', $sender_id)->first();
+          array_add($message, 'sender_user', $sender_user);
+          $string = strip_tags($message['message_body']);
+          if( strlen($string) > 150 ) {
+            $stringCut = substr( $string, 0, 150 );
+            $string = substr($stringCut, 0, strrpos($stringCut, ' ' )).'...Read More';
           }
-
-          $company = \App\ProductionCompany::where('id', $company_id)->first();
-          $shows = $company->get_shows;
-          
-          $comp_name = $company->name;
-          $comp_owner_id = $company->owner_id;
-          $comp_owner = \App\User::where('id', $comp_owner_id)->first();
-          $comp_owner_name = $comp_owner->username;
-          
-          $auditions = array();
-          foreach ($shows as $show) {
-            $audition = ProductionShowAudition::where('show_id',$show->id)->get();  
-            foreach ($audition as $a) {
-              $auditions[$a->id] = $a;
-              $a["show"] = $show->name;
-              $a["owner_name"] = $comp_owner_name;
-              $a["collaborators"] = $people;
-              $start_day = strtotime($a['audition_date']);
-              $start_date = date( 'F j, Y', $start_day );
-              $a['formatted_audition_date'] = $start_date;
-            }
-          } 
-          
-          // $auditions["company"] = $comp_name;
-          // $auditions["owner"] = $comp_owner_name;        
-
-          //array_push($auditions, $comp_name, $comp_owner_name);
-          //die(json_encode($auditions));
-          return view('home.index', compact('auditions'));
+          $message['formatted_message'] = $string;
+          // die(json_encode($message));
         }
-        else {
-          return view('home.index');
-        }
+
+
+        return view('messages', compact('all_messages'));
       } 
       else {
         return view('home.index');

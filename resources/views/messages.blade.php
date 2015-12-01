@@ -10,7 +10,40 @@
 
 @section('content')
 
-<div zf-panel position="left" id="sub-nav" class="fast bounceInOut col-md-3 medium-grid-content">
+<?php // echo $all_messages; ?>
+<div class="container">
+	<div class="col-md-3">
+		<ul class="nav nav-pills nav-stacked">
+			 <li role="presentation" class="active"><a href="#">Inbox<span class="badge">42</span></a></li>
+		  <li role="presentation"><a href="#">Sent Messages</a></li>
+		  <li role="presentation"><a href="#">Favorited</a></li>
+		</ul>
+	</div>
+	<div class="col-md-9">
+		<ul class="list-group">
+  		@foreach( $all_messages as $message )
+			  <li class="list-group-item">
+			  	<div class="row">
+					  	<div class="col-sm-6">
+						  	<h4>{{$message->message_subject}}</h4>
+					  	</div>
+					  	<div class="col-sm-6">
+						  	<p>From: {{$message->sender_user->email}}</p>
+					  	</div>
+					  	<div class="col-sm-12">
+						  	<p>{{$message->formatted_message}}</p>
+					  	</div>
+			  	</div>
+			  </li>
+		  @endforeach
+{{-- 		  <li class="list-group-item">Dapibus ac facilisis in</li>
+		  <li class="list-group-item">Morbi leo risus</li>
+		  <li class="list-group-item">Porta ac consectetur ac</li>
+		  <li class="list-group-item">Vestibulum at eros</li>
+ --}}		</ul>
+	</div>
+</div>
+{{-- <div zf-panel position="left" id="sub-nav" class="fast bounceInOut col-md-3 medium-grid-content">
 	<a class="button expand" zf-open="compose">Compose</a>
 	<section class="block-list with-icons">
 	  <ul>
@@ -114,6 +147,6 @@
 		</div>
 	</div>
 </zf-modal>
-<!-- End Compose Message -->
+ --}}<!-- End Compose Message -->
 
 @endsection

@@ -37,4 +37,13 @@ class ProductionCompany extends Model
     {
         return $this->hasMany('App\ProductionShow', 'production_company_id');
     }
+    
+    /**
+     * user can have many production companies
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+      public function get_teams()
+      {
+          return $this->hasMany('App\ProductionCompanyTeam', 'production_company_id');
+      }
 }
