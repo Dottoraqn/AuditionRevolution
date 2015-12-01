@@ -53,7 +53,7 @@
                   <div class="panel-body">
                     Show: {{$audition->show}} <br>
                     Date: <a class="editable-click editable-disabled" href="javascript:;" data-type="text" data-placement="right" 
-                      class="pUpdate" id="date{{$audition->date}}" data-pk="{{$audition->id}}">{{$audition->audition_date}}</a>
+                      class="pUpdate" id="date{{$audition->formatted_audition_date}}" data-pk="{{$audition->id}}">{{$audition->formatted_audition_date}}</a>
                     <br>
                     Time: <a class="editable-click editable-disabled" href="javascript:;" data-type="text" data-placement="right" 
                       class="pUpdate" id="date{{$audition->date}}" data-pk="{{$audition->id}}">{{$audition->audition_time}}</a>

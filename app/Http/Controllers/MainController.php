@@ -47,6 +47,9 @@ class MainController extends Controller
               $a["show"] = $show->name;
               $a["owner_name"] = $comp_owner_name;
               $a["collaborators"] = $people;
+              $start_day = strtotime($a['audition_date']);
+              $start_date = date( 'F j, Y', $start_day );
+              $a['formatted_audition_date'] = $start_date;
             }
           } 
           

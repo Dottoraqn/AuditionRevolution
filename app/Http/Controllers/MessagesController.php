@@ -25,8 +25,15 @@ class MessagesController extends Controller
           // die(json_encode($sender_id));
           $sender_user = \App\User::where('id', $sender_id)->first();
           array_add($message, 'sender_user', $sender_user);
-          // die(json_encode($sender_user));
+          $string = strip_tags($message['message_body']);
+          if( strlen($string) > 150 ) {
+            $stringCut = substr( $string, 0, 150 );
+            $string = substr($stringCut, 0, strrpos($stringCut, ' ' )).'...Read More';
+          }
+          $message['formatted_message'] = $string;
+          // die(json_encode($message));
         }
+
 
         return view('messages', compact('all_messages'));
       } 

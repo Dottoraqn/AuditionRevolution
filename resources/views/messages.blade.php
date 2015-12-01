@@ -31,7 +31,7 @@
 						  	<p>From: {{$message->sender_user->email}}</p>
 					  	</div>
 					  	<div class="col-sm-12">
-						  	<p>{{$message->message_body}}</p>
+						  	<p>{{$message->formatted_message}}</p>
 					  	</div>
 			  	</div>
 			  </li>
