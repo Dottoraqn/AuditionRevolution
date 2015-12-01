@@ -36,6 +36,15 @@ Route::get('landing', function () {
 Route::get('reg2', function () {
     return view('usertype');
 });
+Route::get('ryantest', function () {
+    return view('ryantest');
+});
+Route::get('ryantest2', function () {
+    return view('ryantest2');
+});
+Route::get('ryantest3', function () {
+    return view('ryantest3');
+});
 
 // Route::get('messages', [
 //     'middleware' => 'acl:manage_user',
