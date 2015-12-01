@@ -20,7 +20,7 @@
           <a href="/messages"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></a>
         </li>
         <li class="{{ Helpers::setActive('profiles') }}">
-          <a href="/profiles"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+          <a href="/user/{{Auth::user()->id}}"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
         </li>
         <li class="{{ Helpers::setActive('search') }}">
           <a href="/search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>

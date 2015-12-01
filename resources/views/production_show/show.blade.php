@@ -61,14 +61,30 @@
         <div class="row">
           @foreach( $shows->auditions as $audition )
             @foreach( $audition->audition_roles as $role )
-              <div class="col-sm-4 role-panels">
+              <div class="col-sm-6 role-panels">
                 <div class="role-information">
                   <h2>{{$role->character_name}}</h2>
                   <p>{{$role->character_description}}</p>
                   <p>{{$role->character_sex}}</p>
                   <p>{{$role->character_age}}</p>
                   <p>{{$role->character_ethnicity}}</p>
-                  <button type="button" class="btn btn-primary role-apply">Apply</button>
+                  <button type="button" class="btn btn-primary role-apply" data-toggle="modal" data-target="#showRole_{{$role->id}}">Apply</button>
+                </div>
+              </div>
+              <div class="modal fade" id="showRole_{{$role->id}}" tabindex="-1" role="dialog" aria-labelledby="projectModal">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel">{{ $role->character_name }}</h4>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Apply</button>
+                    </div>
+                  </div>
                 </div>
               </div>
             @endforeach
