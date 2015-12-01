@@ -30,9 +30,9 @@ Route::get('about', 'PagesController@about');
 Route::get('landing', function () {
     return view('landing');
 });
-Route::get('messages', function () {
-    return view('messages');
-});
+// Route::get('messages', function () {
+//     return view('messages');
+// });
 Route::get('reg2', function () {
     return view('usertype');
 });
@@ -70,6 +70,8 @@ Route::get('home', 'MainController@index');
 Route::get('home/create', 'MainController@create');
 Route::get('home/{id}', 'MainController@show');
 Route::post('home', 'MainController@store');
+
+Route::get('messages', 'MessagesController@index');
 
 // auditions page routes
 Route::get('search', 'ProductionShowAudition\ProductionShowAuditionController@search');
