@@ -28,7 +28,7 @@
               </div>
 
               <div class="form-group">
-                {!! Form::label('website', 'website:' ) !!}
+                {!! Form::label('website', 'Website:' ) !!}
                 {!! Form::text('website', null, ['class' => 'form-control']) !!}
               </div>
 

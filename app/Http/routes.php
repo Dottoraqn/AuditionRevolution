@@ -37,11 +37,11 @@ Route::get('reg2', function () {
     return view('usertype');
 });
 
-Route::get('messages', [
-    'middleware' => 'acl:manage_user',
-    'as' => 'users.admin',
-    'uses' => 'UserController@index'
-]);
+// Route::get('messages', [
+//     'middleware' => 'acl:manage_user',
+//     'as' => 'users.admin',
+//     'uses' => 'UserController@index'
+// ]);
 
 Route::get('projects/dashboard', function() {
     return view('projects/dashboard');
