@@ -12,12 +12,15 @@ class ProductionShow extends Model
     'name',
     'description',
     'payment_type',
-    'location',
     'website',
     'union',
     'start_date',
     'end_date',
-    'production_company_id'
+    'production_company_id',
+    'address',
+    'city',
+    'state',
+    'zipcode'
   ];
   
   /**
