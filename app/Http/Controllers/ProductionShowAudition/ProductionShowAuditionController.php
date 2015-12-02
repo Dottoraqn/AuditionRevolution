@@ -42,8 +42,14 @@ class ProductionShowAuditionController extends Controller
       // $allAuditions = array();
       // $allAuditions = DB::table('user_auditions') ->where($user_id);
       
-      $auditionById = ProductionShowAudition::find($id);
-      return view('auditions.show', compact('auditionById'));
+      $audition = ProductionShowAudition::find($id);
+      $audition_date = strtotime($audition['audition_date']);
+      $start_date = date( 'F j, Y', $audition_date );
+      $audition['formatted_audition_date'] = $start_date;
+      // $audition_time = strtotime($audition['audition_time']);
+      // $start_time = date( 'F j, Y', $audition_time );
+      // $audition['formatted_audition_time'] = $start_time;
+      return view('auditions.show', compact('audition'));
     }  
 
     protected function create()

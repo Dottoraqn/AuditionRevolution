@@ -84,6 +84,7 @@
                 </div>
               </div>
             </div>
+            <a class="btn btn-primary">Add Roles to Audition</a>
             <div class="form-group"> 
               {!! Form::submit('Create', ['class' => 'btn btn-primary form-control']) !!}
             </div>  
