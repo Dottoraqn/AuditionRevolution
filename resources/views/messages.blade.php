@@ -14,6 +14,7 @@
 <div class="container">
 	<div class="col-md-3">
 		<ul class="nav nav-pills nav-stacked">
+			 <li role="presentation" class=""><a href="#">Compose</a></li>
 			 <li role="presentation" class="active"><a href="#">Inbox<span class="badge">42</span></a></li>
 		  <li role="presentation"><a href="#">Sent Messages</a></li>
 		  <li role="presentation"><a href="#">Favorited</a></li>

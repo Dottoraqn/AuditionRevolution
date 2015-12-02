@@ -65,7 +65,7 @@ class MainController extends Controller
         }
       } 
       else {
-        return view('home.index');
+        return view('landing');
       }
     }
 

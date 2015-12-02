@@ -45,6 +45,7 @@
                                <label class="col-sm-4 control-label">Ethnicity</label>
                                <div class="col-sm-4">
                                     <div class="radio">
+                                        <label><input type="radio" name="optradio">Caucasian</label><br>
                                         <label><input type="radio" name="optradio">African American</label><br>
                                         <label><input type="radio" name="optradio">Hispanic</label><br>
                                         <label><input type="radio" name="optradio">East Asian</label><br>
@@ -68,13 +69,13 @@
                         <!--HAIR-->
                             <div class="form-group">
                                 <label class="col-sm-4 control-label bul">Hair Color</label>
-                                <div class="col-sm-4">
+                                <div class="col-md-4">
                                     <div class="radio">
                                         <label><input type="radio" name="optradio">Brown</label><br>
                                         <label><input type="radio" name="optradio">Blonde</label><br>
                                         <label><input type="radio" name="optradio">Red</label><br>
                                         <label><input type="radio" name="optradio">Black</label><br>
-                                        <label><input type="radio" name="optradio">Other</label>
+                                        <label><input type="radio" name="optradio">Other <input type="text" class="form-control" name="haircolor" value="{{ old('haircolor') }}"></label>
                                     </div>
                                </div> 
                             </div>
@@ -120,76 +121,17 @@
                                         <label><input type="checkbox" name="optcheckbox">AGMA</label><br>
                                         <label><input type="checkbox" name="optcheckbox">AGVA</label>
                                     </div>
-                               </div> 
+                               </div>
                             </div>
-
-                           
-                            
-                            
-                            
-<!--
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">First Name</label>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" name="first_name" value="{{ old('first_name') }}">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Last Name</label>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" name="last_name" value="{{ old('last_name') }}">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">E-Mail Address</label>
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control" name="email" value="{{ old('email') }}">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Password</label>
-                                <div class="col-md-6">
-                                    <input type="password" class="form-control" name="password">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Confirm Password</label>
-                                <div class="col-md-6">
-                                    <input type="password" class="form-control" name="password_confirmation">
-                                </div>
-                            </div>
-
+                        <!--SUBM-->
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary">
-                                        Register
+                                        Submit
                                     </button>
                                 </div>
                             </div>
--->
                         </form>
-
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
                     </div>
                 </div>
             </div>
