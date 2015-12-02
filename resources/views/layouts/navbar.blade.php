@@ -25,7 +25,6 @@
       </div><!-- /.navbar-collapse -->
     </div>
   </div>
-
 </nav>
 <header class="nav" id="top">
   <div class="container">

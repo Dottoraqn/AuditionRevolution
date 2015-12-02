@@ -13,21 +13,19 @@ $(function() {
         $(".nav a").removeClass("selected");
         $(".nav a[href=#" + currentArea.attr("id") + "]").addClass("selected");
 
-        if ($(window).scrollTop() > 100) {
+        if ($(window).scrollTop() > 120) {
             $('nav').addClass("navScroll");
             $('ul').addClass("nav-things");
             $('img.logo').addClass("logoScroll");
             $('div.menu').addClass("menuScroll");
             $('ul').removeClass("navbar-nav");
-            $('nav').position("relative");
 
-        } else if ($(window).scrollTop() < 100 ) {
+        } else if ($(window).scrollTop() < 120 ) {
             $('nav').removeClass("navScroll");
             $('ul').removeClass("nav-things");
             $('img.logo').removeClass("logoScroll");
             $('div.menu').removeClass("menuScroll");
             $('ul').addClass("navbar-nav");
-            $('nav').position("absolute");
         }
     });
 });
