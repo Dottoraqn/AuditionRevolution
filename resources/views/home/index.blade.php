@@ -2,10 +2,6 @@
 
 @section('title', 'Page Title')
 
-@section('head')
-
-@endsection
-
 @section('content')
 
 @if (Auth::check())

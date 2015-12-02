@@ -14,9 +14,9 @@
               </ul>
             @endif
 
-            <section class="text">
-              <div class="container"> 
-                <h1 style="text-align: center;">Create New Audition </h1>
+        <section class="text">
+          <div class="container well"> 
+            <h1 style="text-align: center;">Create New Audition </h1>
                 
             {!! Form::open(['url' => 'home']) !!}
 
@@ -84,15 +84,22 @@
                 </div>
               </div>
             </div>
-            <a class="btn btn-primary">Add Roles to Audition</a>
-            <div class="form-group"> 
-              {!! Form::submit('Create', ['class' => 'btn btn-primary form-control']) !!}
-            </div>  
+            <div class="row">
+              <div class="col-sm-4">
+                <a class="btn btn-primary">Add Roles to Audition</a>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group btn btn-primary"> 
+                  {!! Form::submit('Create', ['class' => 'btn btn-primary form-control']) !!}
+                </div>  
+              </div>
+            </div>
+
 
             {!! Form::close() !!}
 
-            </div>
-            </section>
+        </div>
+        </section>
         </div>
     </div>
 </div>

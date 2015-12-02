@@ -38,6 +38,10 @@ NAVBAR STUFF
   margin-top: 0;
 }*/
 
+.well {
+  max-width: 100%;  
+}
+
 header.nav {
   padding-bottom: 100;
 }
@@ -184,7 +188,7 @@ a.navbar-link {
   color:#7f5640;
   margin-top: 10;
   padding-top: 10;
-  margin-right: 15;
+  margin-right: 20;
   padding-right: 10;
   float: right;
   z-index:10000;

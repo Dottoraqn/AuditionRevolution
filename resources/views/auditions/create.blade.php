@@ -6,6 +6,7 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <h4 class="modal-title" id="exampleModalLabel">Create Audition</h4>      
         </div>
+        <div class="well">
         <div class="modal-body">
           {!! Form::open(['url' => 'home']) !!}
 
@@ -29,6 +30,7 @@
           </div>  
 
           {!! Form::close() !!}
+        </div>
         </div>
     </div>
   </div>
