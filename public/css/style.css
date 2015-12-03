@@ -101,7 +101,7 @@ img.audrev {
 nav {
 	position:absolute;
 	background:none;
-	z-index:10000;
+	z-index:9998;
 	font-size:20px;
   margin-top: 100;
   -webkit-transition: all 0.5s;
