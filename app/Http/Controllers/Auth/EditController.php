@@ -54,7 +54,7 @@ class EditController extends Controller
             'weight' => 'required|numeric|min:2|max:3',
             'height' => 'required|regex:"[2-7](1[01]|\d)"',
             'vocalRange' => 'required',
-            'headshot' => 'required',
+            'headshot' => 'required|image',
         ]);
     }
 
