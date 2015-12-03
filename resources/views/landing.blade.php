@@ -10,71 +10,206 @@
     <link rel="icon" href="../../favicon.ico">
 
     <title>Cover Template for Bootstrap</title>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link href="/css/jqueryui-editable.css" rel="stylesheet">
+    <script src="/js/jquery-1.11.3.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+    <script src="/js/jqueryui-editable.min.js"></script>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="cover.css" rel="stylesheet">
+    <link href="/css/landing-page.css" rel="stylesheet">
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
 
   <body>
 
-    <div class="site-wrapper">
-
-      <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand">Cover</h3>
-              <nav>
-                <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">Features</a></li>
-                  <li><a href="#">Contact</a></li>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav" href="#">AuditionRevolution</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Mission</a>
+                    </li>
+                    <li>
+                        <a href="auth/register">Sign Up</a>
+                    </li>
+                    <li>
+                        <a href="auth/login">Login</a>
+                    </li>
                 </ul>
-              </nav>
             </div>
-          </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
-          <div class="inner cover">
-            <h1 class="cover-heading"><a href="/"><span><img src="img/logo.png"></span></a></h1>
-            <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-            <p class="lead">
-              <a href="#" class="btn btn-lg btn-default">Learn more</a>
-            </p>
-          </div>
 
-          <div class="mastfoot">
-            <div class="inner">
-              <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+    <!-- Header -->
+    <div class="intro-header">
+      <div class="intro-header-image"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1>AuditionRevolution</h1>
+                        <h3>Welcome to the Revolution</h3>
+                        <hr class="intro-divider">
+                        <ul class="list-inline intro-social-buttons">
+                            <li>
+                            <a class="btn btn-default" href="auth/register">Sign up</a>  
+                            </li>
+                            <li>
+                              <a class="btn btn-default" href="auth/login">Login</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-          </div>
 
         </div>
-
-      </div>
+        <!-- /.container -->
 
     </div>
+    <!-- /.intro-header -->
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <!-- Page Content -->
+
+    <a id="about" name="about"></a>
+    <div class="content-section-a">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h1><small>Audition Revolution is a cloud-based software that revolutionizes the way that the performing arts conduct auditions.</small></h1>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="img/lesmiz.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <a  name="services"></a>
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">What is AuditionRevolution?</h2>
+                    <p class="lead">This product revolutionizes the audition process for members of the theatre industry.  At this time, there are not any viable competitors producing a system for in-depth talent search and audition process assistance.  Burdened by hard copy casting techniques, confusing organizational methods, and a disjointed talent search, the industry could be revolutionized by a streamlined audition tool that organizes the process effortlessly.  
+</p>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="img-responsive" src="img/wicked.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
+  <a  name="contact"></a>
+    <div class="content-section-a">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Our Mission</h2>
+                    <p class="lead">The mission of Audition Revolution is to provide the performing arts industry, and the talent working in it, with cutting edge technology while providing in-depth best practices for improving industry processes. </p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="img/GP_98038.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <div class="banner">
+      <div class="intro-header-image"></div>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12 signup">
+                  <h2>Ready to join?</h2>
+                  <a class="btn btn-default btn-lg" href="auth/register">Sign up now!</a>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.banner -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#about">About</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#services">Services</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="auth/register">Sign Up</a>
+                        </li>
+                        <li>
+                            <a href="auth/login">Login</a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; AuditionRevolution 2015. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+      <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/popover.js"></script>
+    <script src="/js/tooltip.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>

@@ -2,6 +2,7 @@
     <head>
         <title>Audition Revolution - @yield('title')</title>
         <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/prettySticky.css" rel="stylesheet">
         <link href="/css/style.css" rel="stylesheet">
         <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
@@ -35,4 +36,6 @@
     <script src="/js/popover.js"></script>
     <script src="/js/tooltip.js"></script>
     <script src="/js/main.js"></script>
+    <script src="/js/prettySticky.js"></script>
+
 </html>

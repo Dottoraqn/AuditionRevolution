@@ -24,37 +24,44 @@ time, mark, audio, video {
 NAVBAR STUFF
 ***********/
 
-.navbar-default {
-  position: relative;
-  min-height: 250px;
-  margin-top: 0;
+
+/*.navbar-default {
   background-color: white;
   border-color: white;
+}*/
+
+/*.navbar-header {
+  position: fixed;
+  float: left;
+  text-align: center;
+  width: 100%;
+  margin-top: 0;
+}*/
+
+.well {
+  max-width: 100%;  
 }
 
-.navbar-header {
-    float: left;
-    padding: 15px;
-    text-align: center;
-    width: 100%;
+header.nav {
+  padding-bottom: 100;
 }
-.navbar-brand {
+
+img.audrev {
+  margin-top: 10;
+}
+/*.navbar-brand {
   float:none;
 }
 
 .navbar-default .navbar-nav {
-  position: absolute;
   background: #ff7b34;
   left: 0;
-  bottom: 0;
   right: 0;
-  display: block;
   border-color: transparent;
 }
 
 .navbar-default .navbar-nav > li {
   float: right;
-  padding-top: 25;
   border-color: transparent;
 }
 
@@ -69,15 +76,14 @@ NAVBAR STUFF
 
 .navbar-default .navbar-nav > .active > a:hover {
   background-color: #7f5640;
-}
+}*/
 
-.glyphicon {
+/*.glyphicon {
    color: white;
    line-height: 20px;
    padding-left: 20;
    padding-right: 20;
-   font-size: 25;
-   top: -10;
+   font-size: 20;
 }
 
 .navbar-collapse {
@@ -85,14 +91,113 @@ NAVBAR STUFF
 }
 
 .navbar-text {
-  margin-top: 0;
-  padding-top: 0;
+  margin-top: 10;
+  padding-top: 10;
+  margin-right: 10;
+  padding-right: 10;
   float: right;
+}*/
+
+nav {
+	position:absolute;
+	background:none;
+	z-index:10000;
+	font-size:20px;
+  margin-top: 100;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+nav.navScroll {
+  position:fixed;
+  background-color: #ff7b34;
+  border-color: #ff7b34;
+  font-size:15px;
+  margin-top: 0;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+	transition: all 0.5s;
+	color: #fff;
+}
+
+img.logo {
+	float:left;
+	display:none;
+	transition: all 0.5s;
+  z-index:10000;
+}
+
+img.logoScroll {
+	display:inline;
+	width:50px;
+	padding:5px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+	transition:all 0.5s;
+}
+
+div.menu {
+	text-align:center;
+}
+
+div.menuScroll {
+	float:right;
+}
+ul.navbar-nav {
+  background: #ff7b34;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+  width: 100%;
+  border-color: transparent;
+}
+  
+li.nav {
+  float: right;
+  background: #ff7b34;
+	display:inline;
+	text-decoration:none;
+	padding-left:15px;
+}
+
+  .nav .active a {
+    background-color: #7f5640;
+  }
+  
+	li.nav a {
+		list-style-type: none;
+		text-decoration:none;
+		color:#fff;
+		text-shadow:0.5px 0 0 rgba(255,255,255,0.5);
+	}
+
+	li.nav a:hover {
+    background-color: #7f5640;
+	}
+
+.navScroll .active a {
+  background-color: #7f5640;
+}
+
+nav a.selected {
+  background-color: #7f5640;
+}
+
+a.navbar-link {
+  color:#7f5640;
+  margin-top: 10;
+  padding-top: 10;
+  margin-right: 20;
+  padding-right: 10;
+  float: right;
+  z-index:10000;
 }
 
 /************
 PROJECT STUFF
 ************/
+
 
 #auditions {
   max-height: 500px;
@@ -178,6 +283,25 @@ PROJECT STUFF
 /***********
 OTHER STUFF
 ***********/
+
+.extra_padding {
+  padding-bottom: 200px;
+}
+
+.placeholders {
+  padding-top: 40px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+}
 
 .cover {
   padding-top: 0;
