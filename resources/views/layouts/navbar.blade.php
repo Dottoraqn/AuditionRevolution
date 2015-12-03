@@ -11,13 +11,15 @@
           <li class="{{ Helpers::setActive('messages') }} nav">
             <a href="/messages"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></a>
           </li>
-          <li class="{{ Helpers::setActive('profiles') }} nav">
+          <li class="{{ Helpers::setActive('user/102') }} nav">
             <a href="/user/{{Auth::user()->id}}"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
           </li>
           <li class="{{ Helpers::setActive('search') }} nav">
             <a href="/search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
           </li>
-          <li class="{{ Helpers::setActive('home') }} {{ Helpers::setActive('/') }} nav">
+          <li class="{{ Helpers::setActive('home') }} {{ Helpers::setActive('/') }} 
+                    {{ Helpers::setActive('production_shows/create') }} 
+                    {{ Helpers::setActive('home/create') }} {{ Helpers::setActive('auditions') }} nav">
             <a href="/home"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
           </li>
             
